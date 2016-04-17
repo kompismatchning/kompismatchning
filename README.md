@@ -26,4 +26,4 @@ To start the application:
 $ rails server
 ```
 
-Navigate to `http://localhost:3000`
+Navigate to http://localhost:3000
