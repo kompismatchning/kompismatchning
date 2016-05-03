@@ -1,0 +1,5 @@
+<%= form_for @resource do |f| %>
+  <%= f.collection_select :newcomer_id, Person.engaged.newcomers, :id, :name, {}, data: { behavior: "select-box" } %>
+  <%= f.collection_select :established_id, Person.engaged.established, :id, :name, {}, data: { behavior: "select-box" } %>
+  <%= f.submit %>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416131301) do
+ActiveRecord::Schema.define(version: 20160503183406) do
 
   create_table "matchings", force: :cascade do |t|
     t.datetime "created_at",     null: false
@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(version: 20160416131301) do
     t.integer  "age"
     t.string   "email"
     t.boolean  "established"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "engaged",     default: false
   end
 
 end
