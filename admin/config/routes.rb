@@ -1,5 +1,5 @@
 Admin::Engine.routes.draw do
-  resources :matchings
+  resources :matches
   resources :people
-  root to: "application#welcome"
+  root to: "people#index"
 end

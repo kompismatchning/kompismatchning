@@ -7,10 +7,10 @@ class EmailValidator < ActiveModel::EachValidator
 end
 
 class Person < ActiveRecord::Base
-  enum gender: { female: 0, male: 1, other: 2 }
+  enum gender: { male: 0, female: 1, other: 2 }
 
-  has_many :newcomer_matchings, foreign_key: "newcomer_id", class_name: "Matching"
-  has_many :established_matchings, foreign_key: "established_id", class_name: "Matching"
+  has_many :newcomer_matches, foreign_key: "newcomer_id", class_name: "Match"
+  has_many :established_matches, foreign_key: "established_id", class_name: "Match"
 
   validates :name, presence: true
   validates :established, inclusion: { in: [true, false] }

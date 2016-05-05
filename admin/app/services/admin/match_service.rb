@@ -1,5 +1,5 @@
 module Admin
-  class MatchingService
+  class MatchService
     include Godmin::Resources::ResourceService
 
     attrs_for_index :established, :newcomer, :created_at
