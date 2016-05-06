@@ -5,8 +5,8 @@ sv:
         one: Person
         other: Personer
       match:
-        one: Matching
-        other: Matchingar
+        one: Matchning
+        other: Matchningar
     attributes:
       person:
         name: Namn
