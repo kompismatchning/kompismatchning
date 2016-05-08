@@ -11,6 +11,6 @@
 // about supported directives.
 //
 //= require moment
-//= require moment/en-gb
+//= require moment/sv
 //= require godmin
 //= require_tree .
