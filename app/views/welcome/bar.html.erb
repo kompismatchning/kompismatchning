@@ -15,12 +15,12 @@
         <div class="two fields">
           <div class="field">
             <label>Förnamn</label>
-            <input type="text" name="name" placeholder="Skriv ditt namn">
+            <input type="text" name="name" placeholder="Skriv ditt förnamn">
           </div>
 
           <div class="field">
             <label>Efternamn</label>
-            <input type="text" name="name" placeholder="Skriv ditt namn">
+            <input type="text" name="name" placeholder="Skriv ditt efternamn">
           </div>
         </div>
 
@@ -31,19 +31,16 @@
 
         <div class="field">
           <label>Jag kommer från</label>
-          <div class="ui fluid selection dropdown">
+          <div class="ui fluid search selection dropdown">
+            <input type="hidden" name="country">
             <i class="dropdown icon"></i>
             <span class="default text">Välj land</span>
             <div class="menu">
-              <div class="item">
-                <i class="af flag"></i> Afghanistan
-              </div>
-              <div class="item">
-                <i class="ax flag"></i> Åland Islands
-              </div>
-              <div class="item">
-                <i class="al flag"></i> Albania
-              </div>
+              <% ISO3166::Country.translations.each do |code, name| %>
+                <div class="item" data-value="<%= code.downcase %>">
+                  <i class="<%= code.downcase %> flag"></i> <%= name %>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
