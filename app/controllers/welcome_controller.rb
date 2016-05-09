@@ -2,6 +2,6 @@ class WelcomeController < ApplicationController
   def foo
   end
 
-  def foobar
+  def bar
   end
 end
