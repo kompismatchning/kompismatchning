@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root to: "welcome#index"
+  get "/foo", to: "welcome#foo"
   mount Admin::Engine, at: "admin"
 end
