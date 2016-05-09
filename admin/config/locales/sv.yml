@@ -1,0 +1,13 @@
+sv:
+  godmin:
+    title: Blending
+    person:
+      scopes:
+        labels:
+          interested: Intresserade
+          engaged: Engagerade
+      filters:
+        labels:
+          name: Namn
+          gender: Kön
+          established: Etablerad

@@ -1,0 +1,22 @@
+sv:
+  activerecord:
+    models:
+      person:
+        one: Person
+        other: Personer
+      match:
+        one: Matchning
+        other: Matchningar
+    attributes:
+      person:
+        name: Namn
+        gender: Kön
+        age: Ålder
+        email: E-post
+        established: Etablerad
+        engaged: Engagerad
+      match:
+        newcomer: Nyanländ
+        newcomer_id: Nyanländ
+        established: Etablerad
+        established_id: Etablerad
