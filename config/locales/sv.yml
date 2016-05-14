@@ -1,6 +1,9 @@
 sv:
   activerecord:
     models:
+      admin/admin_user:
+        one: Administratör
+        other: Administratörer
       person:
         one: Person
         other: Personer
@@ -8,6 +11,9 @@ sv:
         one: Matchning
         other: Matchningar
     attributes:
+      admin/admin_user:
+        email: E-post
+        password: Lösenord
       person:
         name: Namn
         gender: Kön

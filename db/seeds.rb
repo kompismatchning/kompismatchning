@@ -2,6 +2,13 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 if Rails.env.development?
+  Admin::AdminUser.destroy_all
+
+  Admin::AdminUser.create(
+    email: "admin@example.com",
+    password: "password"
+  )
+
   Person.destroy_all
 
   Person.create!(
