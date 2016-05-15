@@ -1,0 +1,17 @@
+<div class="btn-group btn-group-sm pull-right">
+  <% if policy(resource).show? %>
+    <%= link_to translate_scoped("actions.show"), resource, class: "btn btn-default" %>
+  <% end %>
+  <% if policy(resource).edit? %>
+    <%= link_to translate_scoped("actions.edit"), [:edit, resource], class: "btn btn-default"  %>
+  <% end %>
+  <% if resource.active? %>
+    <%= link_to translate_scoped("actions.conclude"), conclude_match_path(resource),
+      class: "btn btn-warning", data: { confirm: translate_scoped("actions.confirm_message") } %>
+  <% else %>
+    <%= link_to translate_scoped("actions.reactivate"), reactivate_match_path(resource),
+      class: "btn btn-default" %>
+    <%= link_to translate_scoped("actions.destroy"), resource, method: :delete,
+      class: "btn btn-danger", data: { confirm: translate_scoped("actions.confirm_message") } %>
+  <% end %>
+</div>

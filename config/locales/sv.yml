@@ -26,3 +26,5 @@ sv:
         newcomer_id: Nyanländ
         established: Etablerad
         established_id: Etablerad
+        created_at: Skapad
+        concluded_at: Avslutad

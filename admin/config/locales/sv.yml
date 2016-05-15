@@ -1,6 +1,14 @@
 sv:
   godmin:
     title: Blending
+    actions:
+      conclude: Avsluta
+      reactivate: Ångra avlut
+    match:
+      scopes:
+        labels:
+          active: Aktiva
+          inactive: Avslutade
     person:
       scopes:
         labels:

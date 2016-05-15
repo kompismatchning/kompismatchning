@@ -7,6 +7,21 @@ class Match < ActiveRecord::Base
 
   validate :newcomer_and_established
 
+  scope :active, -> { where(concluded_at: nil) }
+  scope :inactive, -> { where.not(concluded_at: nil) }
+
+  def active?
+    concluded_at.nil?
+  end
+
+  def conclude
+    update(concluded_at: Time.zone.now)
+  end
+
+  def reactivate
+    update(concluded_at: nil)
+  end
+
   def to_s
     "#{newcomer.name} + #{established.name}"
   end
