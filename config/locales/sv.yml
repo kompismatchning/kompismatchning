@@ -21,6 +21,7 @@ sv:
         email: E-post
         established: Etablerad
         engaged: Engagerad
+        last_matched_at: Senast Matchad
       match:
         newcomer: Nyanländ
         newcomer_id: Nyanländ

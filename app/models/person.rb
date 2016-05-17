@@ -14,6 +14,10 @@ class Person < ActiveRecord::Base
   scope :established, -> { where(established: true) }
   scope :newcomers, -> { where(established: false) }
 
+  def last_match
+    Match.where("newcomer_id = ? OR established_id = ?", id, id).last
+  end
+
   def to_s
     name
   end
