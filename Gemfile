@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "admin", path: "admin"
 gem "coffee-rails", "~> 4.1.0"
+gem "countries", "~> 1.2.5"
 gem "jbuilder", "~> 2.0"
 gem "jquery-rails", "~> 4.1.1"
 gem "rails", "4.2.6"

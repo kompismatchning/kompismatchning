@@ -1,0 +1,82 @@
+<div class="ui centered grid container">
+  <div class="row">
+    <div class="sixteen wide mobile nine wide tablet six wide computer column">
+      <p></p>
+      <h2 class="ui header">
+        <div class="content">
+          Duo Stockholm
+          <div class="sub header">Intresseanmälan</div>
+        </div>
+      </h2>
+
+      <div class="ui divider"></div>
+
+      <form class="ui form">
+        <div class="two fields">
+          <div class="field">
+            <label>Förnamn</label>
+            <input type="text" name="name" placeholder="Skriv ditt förnamn">
+          </div>
+
+          <div class="field">
+            <label>Efternamn</label>
+            <input type="text" name="name" placeholder="Skriv ditt efternamn">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>E-postadress</label>
+          <input type="text" name="email" placeholder="Skriv din e-postadress">
+        </div>
+
+        <div class="field">
+          <label>Jag kommer från</label>
+          <div class="ui fluid search selection dropdown">
+            <input type="hidden" name="country">
+            <i class="dropdown icon"></i>
+            <span class="default text">Välj land</span>
+            <div class="menu">
+              <% ISO3166::Country.translations.each do |code, name| %>
+                <div class="item" data-value="<%= code.downcase %>">
+                  <i class="<%= code.downcase %> flag"></i> <%= name %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="grouped fields">
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="fruit" tabindex="0" class="hidden" checked>
+              <label>
+                Jag har bott länge i landet<br>
+                <small>
+                  och vill bli matchad med en nyanländ
+                </small>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="fruit" tabindex="0" class="hidden">
+              <label>
+                Jag är ny i landet<br>
+                <small>
+                  och vill bli matchad med någon som bor här
+                </small>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="ui divider"></div>
+
+        <button class="ui centered big green button" type="submit">
+          <i class="check icon"></i>
+          Anmäl intresse
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
