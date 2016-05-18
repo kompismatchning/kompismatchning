@@ -16,7 +16,7 @@ if Rails.env.development?
     gender: :female,
     age: 27,
     email: "johanna@example.com",
-    established: true,
+    status: :established,
     engaged: false
   )
 
@@ -25,7 +25,7 @@ if Rails.env.development?
     gender: :male,
     age: 29,
     email: "jens@example.com",
-    established: false,
+    status: :newcomer,
     engaged: true
   )
 
@@ -34,7 +34,7 @@ if Rails.env.development?
     gender: :female,
     age: 29,
     email: "fanny@example.com",
-    established: true,
+    status: :established,
     engaged: true
   )
 
@@ -43,7 +43,7 @@ if Rails.env.development?
     gender: :male,
     age: 29,
     email: "bruno@example.com",
-    established: false,
+    status: :newcomer,
     engaged: true
   )
 end
