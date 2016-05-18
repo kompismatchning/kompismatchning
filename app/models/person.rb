@@ -14,6 +14,10 @@ class Person < ActiveRecord::Base
   scope :established, -> { where(established: true) }
   scope :newcomers, -> { where(established: false) }
 
+  def self.genders_for_selection
+    genders.keys.map { |gender| [I18n.t("activerecord.attributes.person.genders.#{gender}"), gender] }
+  end
+
   def last_match
     Match.where("newcomer_id = ? OR established_id = ?", id, id).last
   end

@@ -18,7 +18,7 @@ module Admin
     end
 
     filter :name
-    filter :gender, as: :select, collection: -> { [:male, :female, :other] }
+    filter :gender, as: :select, collection: -> { Person.genders_for_selection }
     filter :established, as: :select, collection: -> { [true, false] }
 
     def filter_name(people, value)
