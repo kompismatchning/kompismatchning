@@ -1,5 +1,6 @@
 Admin::Engine.routes.draw do
+  root to: "people#index"
   resources :matches
   resources :people
-  root to: "people#index"
+  resource :session, only: [:new, :create, :destroy]
 end
