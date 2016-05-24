@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508221127) do
+ActiveRecord::Schema.define(version: 20160518212210) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "admin_admin_users", force: :cascade do |t|
     t.string   "email"
@@ -19,9 +22,6 @@ ActiveRecord::Schema.define(version: 20160508221127) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
 
   create_table "matches", force: :cascade do |t|
     t.datetime "created_at",     null: false
@@ -35,10 +35,10 @@ ActiveRecord::Schema.define(version: 20160508221127) do
     t.integer  "gender"
     t.integer  "age"
     t.string   "email"
-    t.boolean  "established"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.boolean  "engaged",     default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "engaged",    default: false
+    t.integer  "status"
   end
 
 end

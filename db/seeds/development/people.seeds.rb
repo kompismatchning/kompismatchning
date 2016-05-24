@@ -3,7 +3,7 @@ Person.create!(
   gender: :female,
   age: 27,
   email: "johanna@example.com",
-  established: true,
+  status: :established,
   engaged: false
 )
 
@@ -12,7 +12,7 @@ Person.create!(
   gender: :male,
   age: 29,
   email: "jens@example.com",
-  established: false,
+  status: :newcomer,
   engaged: true
 )
 
@@ -21,7 +21,7 @@ Person.create!(
   gender: :female,
   age: 29,
   email: "fanny@example.com",
-  established: true,
+  status: :established,
   engaged: true
 )
 
@@ -30,7 +30,7 @@ Person.create!(
   gender: :male,
   age: 29,
   email: "bruno@example.com",
-  established: false,
+  status: :newcomer,
   engaged: true
 )
 
@@ -39,6 +39,6 @@ Person.create!(
   gender: :female,
   age: 29,
   email: "julia@example.com",
-  established: true,
+  status: :established,
   engaged: false
 )

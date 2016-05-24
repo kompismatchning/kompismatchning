@@ -15,13 +15,19 @@ sv:
         email: E-post
         password: Lösenord
       person:
-        name: Namn
-        gender: Kön
         age: Ålder
         email: E-post
-        established: Etablerad
         engaged: Engagerad
+        gender: Kön
+        genders:
+          male: Man
+          female: Kvinna
+          other: Annat
         last_matched_at: Senast Matchad
+        name: Namn
+        statuses:
+          established: Etablerad
+          newcomer: Nyanländ
       match:
         newcomer: Nyanländ
         newcomer_id: Nyanländ
