@@ -18,4 +18,4 @@ sv:
         labels:
           name: Namn
           gender: Kön
-          established: Etablerad
+          status: Status
