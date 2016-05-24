@@ -1,0 +1,9 @@
+<%= form_for @resource do |f| %>
+  <%= f.text_field :name %>
+  <%= f.email_field :email %>
+  <%= f.number_field :age %>
+  <%= f.select :gender, Person.gender_for_selection, {}, data: { behavior: "select-box" } %>
+  <%= f.select :status, Person.status_for_selection, {}, data: { behavior: "select-box" } %>
+  <%= f.check_box :engaged %>
+  <%= f.submit %>
+<% end %>
