@@ -14,11 +14,11 @@ class Match < ActiveRecord::Base
     concluded_at.nil?
   end
 
-  def conclude
+  def conclude!
     update(concluded_at: Time.zone.now)
   end
 
-  def reactivate
+  def reactivate!
     update(concluded_at: nil)
   end
 

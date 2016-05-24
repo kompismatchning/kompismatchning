@@ -5,13 +5,18 @@
   <% if policy(resource).edit? %>
     <%= link_to translate_scoped("actions.edit"), [:edit, resource], class: "btn btn-default"  %>
   <% end %>
-  <% if resource.active? %>
-    <%= link_to translate_scoped("actions.conclude"), conclude_match_path(resource),
-      class: "btn btn-warning", data: { confirm: translate_scoped("actions.confirm_message") } %>
-  <% else %>
-    <%= link_to translate_scoped("actions.reactivate"), reactivate_match_path(resource),
-      class: "btn btn-default" %>
+  <% if policy(resource).destroy? %>
     <%= link_to translate_scoped("actions.destroy"), resource, method: :delete,
       class: "btn btn-danger", data: { confirm: translate_scoped("actions.confirm_message") } %>
   <% end %>
 </div>
+
+<% if resource.active? %>
+  <%= form_tag(match_match_conclusions_path(resource)) do %>
+    <%= submit_tag translate_scoped("actions.conclude"), class:"btn btn-warning btn-sm",
+    data: { confirm: translate_scoped("actions.confirm_message") } %>
+  <% end %>
+<% else %>
+  <%= link_to translate_scoped("actions.reactivate"), match_match_conclusions_path(resource), method: :delete,
+    class: "btn btn-default btn-sm" %>
+<% end %>
