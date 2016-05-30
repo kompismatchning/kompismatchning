@@ -16,6 +16,7 @@ sv:
         password: Lösenord
       person:
         age: Ålder
+        comment: Kommentar
         email: E-post
         engaged: Engagerad
         gender: Kön
@@ -29,6 +30,7 @@ sv:
           established: Etablerad
           newcomer: Nyanländ
       match:
+        comment: Kommentar
         newcomer: Nyanländ
         newcomer_id: Nyanländ
         established: Etablerad
