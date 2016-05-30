@@ -7,7 +7,7 @@ module Admin
     private
 
     def resource_params
-      params.require(:person).permit(:name, :email, :age, :gender, :status, :engaged)
+      params.require(:person).permit(:name, :email, :age, :gender, :status, :engaged, :comment)
     end
 
     def redirect_after_batch_action_engage
