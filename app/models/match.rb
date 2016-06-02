@@ -7,7 +7,7 @@ class Match < ActiveRecord::Base
 
   validate :newcomer_and_established
 
-  def opposite(person)
+  def matched_with(person)
     newcomer == person ? established : newcomer
   end
 

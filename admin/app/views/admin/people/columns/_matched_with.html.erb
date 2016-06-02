@@ -1,4 +1,4 @@
-<% if resource.last_match %>
-  <%= link_to resource.last_match.opposite(resource).name, resource.last_match %><br>
-  den <%= l resource.last_match.created_at.to_date, format: :long %>
+<% if resource.current_match %>
+  <%= link_to resource.currently_matched_with.name, resource.current_match %><br>
+  den <%= l resource.current_match.created_at.to_date, format: :long %>
 <% end %>

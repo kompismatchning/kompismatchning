@@ -20,8 +20,12 @@ class Person < ActiveRecord::Base
     statuses.keys.map { |status| [I18n.t("activerecord.attributes.person.statuses.#{status}"), status] }
   end
 
-  def last_match
+  def current_match
     Match.where("newcomer_id = ? OR established_id = ?", id, id).last
+  end
+
+  def currently_matched_with
+    current_match.matched_with(self)
   end
 
   def to_s
