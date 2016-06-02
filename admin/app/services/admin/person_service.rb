@@ -4,7 +4,6 @@ module Admin
 
     attrs_for_index :name, :gender, :age, :email, :status, :matched_with
     attrs_for_show :name, :gender, :age, :email, :status, :engaged, :comment
-    attrs_for_form :name, :gender, :age, :email, :status, :engaged, :comment
 
     scope :interested
     scope :engaged
