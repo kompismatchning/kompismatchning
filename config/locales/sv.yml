@@ -26,6 +26,7 @@ sv:
           other: Annat
         last_matched_at: Senast Matchad
         name: Namn
+        phone_number: Telefonnummer
         statuses:
           established: Etablerad
           newcomer: Nyanländ
