@@ -4,6 +4,7 @@ Person.create!(
   age: 27,
   email: "johanna@example.com",
   status: :established,
+  country: :se,
   engaged: false
 )
 
@@ -13,6 +14,7 @@ Person.create!(
   age: 29,
   email: "jens@example.com",
   status: :newcomer,
+  country: :af,
   engaged: true
 )
 
@@ -22,6 +24,7 @@ Person.create!(
   age: 29,
   email: "fanny@example.com",
   status: :established,
+  country: :se,
   engaged: true
 )
 
@@ -31,6 +34,7 @@ Person.create!(
   age: 29,
   email: "bruno@example.com",
   status: :newcomer,
+  country: :af,
   engaged: true
 )
 
@@ -40,5 +44,6 @@ Person.create!(
   age: 29,
   email: "julia@example.com",
   status: :established,
+  country: :se,
   engaged: false
 )
