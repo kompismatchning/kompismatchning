@@ -1,5 +1,5 @@
 Person.create!(
-  name: "Johanna",
+  name: "Johanna Torbörnsson",
   gender: :female,
   age: 27,
   email: "johanna@example.com",
@@ -8,7 +8,7 @@ Person.create!(
 )
 
 Person.create!(
-  name: "Jens",
+  name: "Jens Ljungblad",
   gender: :male,
   age: 29,
   email: "jens@example.com",
@@ -17,7 +17,7 @@ Person.create!(
 )
 
 Person.create!(
-  name: "Fanny",
+  name: "Fanny Lindh",
   gender: :female,
   age: 29,
   email: "fanny@example.com",
@@ -26,7 +26,7 @@ Person.create!(
 )
 
 Person.create!(
-  name: "Bruno",
+  name: "Bruno Söderström",
   gender: :male,
   age: 29,
   email: "bruno@example.com",
@@ -35,7 +35,7 @@ Person.create!(
 )
 
 Person.create!(
-  name: "Julia",
+  name: "Julia Ramstedt",
   gender: :female,
   age: 29,
   email: "julia@example.com",

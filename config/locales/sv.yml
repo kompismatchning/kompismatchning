@@ -24,7 +24,7 @@ sv:
           male: Man
           female: Kvinna
           other: Annat
-        last_matched_at: Senast Matchad
+        matched_with: Matchad med
         name: Namn
         statuses:
           established: Etablerad
