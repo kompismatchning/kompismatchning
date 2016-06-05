@@ -2,7 +2,7 @@ module Admin
   class PersonService
     include Godmin::Resources::ResourceService
 
-    attrs_for_index :name, :gender, :age, :email, :status, :country, :last_matched_at
+    attrs_for_index :name, :gender, :age, :email, :status, :country, :matched_with
     attrs_for_show :name, :gender, :age, :email, :status, :country, :engaged, :comment
 
     scope :interested

@@ -8,6 +8,10 @@ class Match < ActiveRecord::Base
   validate :newcomer_and_established_are_different
   validate :newcomer_and_established_are_unmatched
 
+  def matched_with(person)
+    newcomer == person ? established : newcomer
+  end
+
   def to_s
     "#{newcomer.name} + #{established.name}"
   end
