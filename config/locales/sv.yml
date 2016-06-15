@@ -17,6 +17,7 @@ sv:
       person:
         age: Ålder
         comment: Kommentar
+        country: Land
         email: E-post
         engaged: Engagerad
         gender: Kön

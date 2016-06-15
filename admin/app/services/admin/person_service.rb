@@ -2,8 +2,8 @@ module Admin
   class PersonService
     include Godmin::Resources::ResourceService
 
-    attrs_for_index :name, :gender, :age, :email, :status, :matched_with
-    attrs_for_show :name, :gender, :age, :email, :status, :engaged, :comment
+    attrs_for_index :name, :gender, :age, :email, :status, :country, :matched_with
+    attrs_for_show :name, :gender, :age, :email, :status, :country, :engaged, :comment
 
     scope :interested
     scope :engaged
@@ -19,6 +19,7 @@ module Admin
     filter :name
     filter :gender, as: :select, collection: -> { Person.gender_for_selection }
     filter :status, as: :select, collection: -> { Person.status_for_selection }
+    filter :country, as: :select, collection: -> { Person.country_for_selection }
 
     def filter_name(people, value)
       people.where("name LIKE ?", "%#{value}%")
@@ -30,6 +31,10 @@ module Admin
 
     def filter_status(people, value)
       people.where(status: Person.statuses[value])
+    end
+
+    def filter_country(people, value)
+      people.where(country: value)
     end
 
     batch_action :engage, only: [:interested]

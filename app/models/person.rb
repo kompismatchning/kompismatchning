@@ -20,6 +20,10 @@ class Person < ActiveRecord::Base
     statuses.keys.map { |status| [I18n.t("activerecord.attributes.person.statuses.#{status}"), status] }
   end
 
+  def self.country_for_selection
+    ISO3166::Country.translations("sv").invert
+  end
+
   def current_match
     Match.where("newcomer_id = ? OR established_id = ?", id, id).last
   end
