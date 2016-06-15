@@ -25,7 +25,7 @@ class Match < ActiveRecord::Base
   end
 
   def newcomer_and_established_are_unmatched
-    errors.add(:newcomer_id, "can't have existing match") if newcomer.last_match.present?
-    errors.add(:established_id, "can't have existing match") if established.last_match.present?
+    errors.add(:newcomer_id, "can't have existing match") if newcomer.current_match.present?
+    errors.add(:established_id, "can't have existing match") if established.current_match.present?
   end
 end
