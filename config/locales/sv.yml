@@ -25,6 +25,7 @@ sv:
           male: Man
           female: Kvinna
           other: Annat
+        interest_list: Intressen
         matched_with: Matchad med
         name: Namn
         statuses:

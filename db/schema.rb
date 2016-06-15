@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604093555) do
+ActiveRecord::Schema.define(version: 20160615181216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,22 @@ ActiveRecord::Schema.define(version: 20160604093555) do
     t.text     "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "interest_taggings", force: :cascade do |t|
+    t.integer  "person_id"
+    t.integer  "interest_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "interest_taggings", ["interest_id"], name: "index_interest_taggings_on_interest_id", using: :btree
+  add_index "interest_taggings", ["person_id"], name: "index_interest_taggings_on_person_id", using: :btree
+
+  create_table "interests", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "matches", force: :cascade do |t|
@@ -44,4 +60,6 @@ ActiveRecord::Schema.define(version: 20160604093555) do
     t.string   "country"
   end
 
+  add_foreign_key "interest_taggings", "interests"
+  add_foreign_key "interest_taggings", "people"
 end

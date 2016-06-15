@@ -5,6 +5,7 @@ Person.create!(
   email: "johanna@example.com",
   status: :established,
   country: :se,
+  interest_list: "Fotografering, Programmering",
   engaged: false
 )
 
@@ -15,6 +16,7 @@ Person.create!(
   email: "jens@example.com",
   status: :newcomer,
   country: :af,
+  interest_list: "Programmering, Rocket League",
   engaged: true
 )
 
@@ -25,6 +27,7 @@ Person.create!(
   email: "fanny@example.com",
   status: :established,
   country: :se,
+  interest_list: "Låtsasvärldar, Cyklar",
   engaged: true
 )
 
@@ -35,6 +38,7 @@ Person.create!(
   email: "bruno@example.com",
   status: :newcomer,
   country: :af,
+  interest_list: "Låtsasvärldar, Opera",
   engaged: true
 )
 
@@ -45,5 +49,6 @@ Person.create!(
   email: "julia@example.com",
   status: :established,
   country: :se,
+  interest_list: "Programmering, Hinderbanor",
   engaged: false
 )
