@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160615181216) do
 
   create_table "matches", force: :cascade do |t|
     t.text "comment"
+    t.datetime "concluded_at"
     t.datetime "created_at", null: false
     t.integer "established_id"
     t.integer "newcomer_id"

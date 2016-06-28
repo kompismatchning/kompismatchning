@@ -2,5 +2,8 @@
   <%= f.collection_select :newcomer_id, Person.engaged.newcomer, :id, :name, {}, data: { behavior: "select-box" } %>
   <%= f.collection_select :established_id, Person.engaged.established, :id, :name, {}, data: { behavior: "select-box" } %>
   <%= f.text_area :comment %>
+  <% if @resource.persisted? %>
+    <%= f.date_field :concluded_at %>
+  <% end %>
   <%= f.submit %>
 <% end %>

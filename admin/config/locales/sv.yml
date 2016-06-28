@@ -1,6 +1,14 @@
 sv:
   godmin:
     title: Blending
+    actions:
+      conclude: Avsluta
+      conclude_confirm_message: Det här kommer sätta matchingens slutdatum till dagens datum. Vill du fortsätta?
+    match:
+      scopes:
+        labels:
+          active: Aktiva
+          inactive: Avslutade
     person:
       scopes:
         labels:

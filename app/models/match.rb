@@ -12,6 +12,25 @@ class Match < ActiveRecord::Base
     newcomer == person ? established : newcomer
   end
 
+  scope :active, -> { where("concluded_at >= ?", Time.zone.now) }
+  scope :inactive, -> { where("concluded_at < ?", Time.zone.now) }
+
+  def active?
+    concluded_at >= Time.zone.now
+  end
+
+  def conclude
+    update(concluded_at: Time.zone.now)
+  end
+
+  def created_at_as_date
+    created_at.to_date
+  end
+
+  def concluded_at_as_date
+    concluded_at.to_date
+  end
+
   def to_s
     "#{newcomer.name} + #{established.name}"
   end
