@@ -23,5 +23,10 @@ module Admin
     def order_by_concluded_at_as_date(resources, direction)
       resources.order("concluded_at #{direction}")
     end
+
+    def create_resource(resource)
+      resource.concluded_at = 6.months.from_now
+      resource.save!
+    end
   end
 end

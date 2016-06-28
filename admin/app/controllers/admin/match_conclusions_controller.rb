@@ -4,7 +4,7 @@ module Admin
   class MatchConclusionsController < ApplicationController
     def create
       @match = Match.find params[:match_id]
-      @match.conclude!
+      @match.conclude
       redirect_to @match, notice: "Matchingen avslutades"
     end
   end

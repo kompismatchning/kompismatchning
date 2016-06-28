@@ -16,10 +16,10 @@ class Match < ActiveRecord::Base
   scope :inactive, -> { where("concluded_at < ?", Time.zone.now) }
 
   def active?
-    concluded_at > Time.zone.now
+    concluded_at >= Time.zone.now
   end
 
-  def conclude!
+  def conclude
     update(concluded_at: Time.zone.now)
   end
 
