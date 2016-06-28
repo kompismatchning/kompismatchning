@@ -5,7 +5,7 @@ Person.create!(
   email: "johanna@example.com",
   status: :established,
   country: :se,
-  interest_list: "Fotografering, Programmering",
+  interest_list: "Fotografering, Programmering, Ost",
   engaged: false
 )
 
@@ -38,7 +38,7 @@ Person.create!(
   email: "bruno@example.com",
   status: :newcomer,
   country: :af,
-  interest_list: "Låtsasvärldar, Opera",
+  interest_list: "Låtsasvärldar, Opera, Poesi",
   engaged: true
 )
 
@@ -49,6 +49,6 @@ Person.create!(
   email: "julia@example.com",
   status: :established,
   country: :se,
-  interest_list: "Programmering, Hinderbanor",
+  interest_list: "Programmering, Hinderbanor, Djävulspinnar",
   engaged: false
 )
