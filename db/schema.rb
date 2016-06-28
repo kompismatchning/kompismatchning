@@ -52,11 +52,12 @@ ActiveRecord::Schema.define(version: 20160615181216) do
     t.integer  "gender"
     t.integer  "age"
     t.string   "email"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.boolean  "engaged",    default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "engaged",      default: false
     t.integer  "status"
     t.text     "comment"
+    t.string   "phone_number"
     t.string   "country"
   end
 

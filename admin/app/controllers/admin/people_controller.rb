@@ -10,6 +10,7 @@ module Admin
       params.require(:person).permit(
         :name,
         :email,
+        :phone_number,
         :age,
         :gender,
         :status,

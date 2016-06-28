@@ -28,6 +28,7 @@ sv:
         interest_list: Intressen
         matched_with: Matchad med
         name: Namn
+        phone_number: Telefonnummer
         statuses:
           established: Etablerad
           newcomer: Nyanländ
