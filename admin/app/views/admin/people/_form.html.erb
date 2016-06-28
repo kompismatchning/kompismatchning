@@ -5,6 +5,8 @@
   <%= f.number_field :age %>
   <%= f.select :gender, Person.gender_for_selection, {}, data: { behavior: "select-box" } %>
   <%= f.select :status, Person.status_for_selection, {}, data: { behavior: "select-box" } %>
+  <%= f.select :country, Person.country_for_selection, { include_blank: true }, data: { behavior: "select-box" } %>
+  <%= f.tags_field :interest_list, data: { collection: Interest.all.pluck(:name) } %>
   <%= f.check_box :engaged %>
   <%= f.text_area :comment %>
   <%= f.submit %>

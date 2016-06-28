@@ -11,3 +11,4 @@ sv:
           name: Namn
           gender: Kön
           status: Status
+          country: Land

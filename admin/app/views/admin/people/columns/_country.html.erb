@@ -1,0 +1,3 @@
+<% if resource.country.present? %>
+  <i class="<%= resource.country.downcase %> flag"></i><%= ISO3166::Country[resource.country].translation("sv") %>
+<% end %>

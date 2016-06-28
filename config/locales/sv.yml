@@ -17,6 +17,7 @@ sv:
       person:
         age: Ålder
         comment: Kommentar
+        country: Land
         email: E-post
         engaged: Engagerad
         gender: Kön
@@ -24,7 +25,8 @@ sv:
           male: Man
           female: Kvinna
           other: Annat
-        last_matched_at: Senast Matchad
+        interest_list: Intressen
+        matched_with: Matchad med
         name: Namn
         phone_number: Telefonnummer
         statuses:
