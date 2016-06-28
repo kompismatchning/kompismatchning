@@ -7,11 +7,11 @@ class Match < ActiveRecord::Base
 
   validate :newcomer_and_established
 
-  scope :active, -> { where(concluded_at: nil) }
-  scope :inactive, -> { where.not(concluded_at: nil) }
+  scope :active, -> { where("concluded_at >= ?", Time.zone.now) }
+  scope :inactive, -> { where("concluded_at < ?", Time.zone.now) }
 
   def active?
-    concluded_at.nil?
+    concluded_at > Time.zone.now
   end
 
   def conclude!
