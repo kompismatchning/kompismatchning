@@ -7,11 +7,5 @@ module Admin
       @match.conclude!
       redirect_to @match, notice: "Matchingen avslutades"
     end
-
-    def destroy
-      @match = Match.find params[:match_id]
-      @match.reactivate!
-      redirect_to @match, notice: "Matchingen återaktiverades"
-    end
   end
 end

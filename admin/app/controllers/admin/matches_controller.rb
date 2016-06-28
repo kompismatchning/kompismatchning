@@ -12,7 +12,7 @@ module Admin
     private
 
     def resource_params
-      params.require(:match).permit(:established_id, :newcomer_id)
+      params.require(:match).permit(:established_id, :newcomer_id, :concluded_at)
     end
   end
 end
