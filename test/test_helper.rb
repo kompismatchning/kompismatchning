@@ -18,14 +18,14 @@ class ActiveSupport::TestCase
       gender: :female,
       age: 27,
       email: "user_#{rand(5..30)}@example.com",
-      status: :newcomer,
+      status: status,
       engaged: false
     )
   end
 
   def create_match
     established = create_established_person
-    newcomer = create_established_person
+    newcomer = create_newcomer_person
 
     Match.create!(newcomer: newcomer, established: established)
   end
