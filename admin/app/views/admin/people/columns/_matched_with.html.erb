@@ -1,0 +1,4 @@
+<% if resource.current_match %>
+  <%= link_to resource.currently_matched_with.name, resource.current_match %><br>
+  den <%= l resource.current_match.created_at.to_date, format: :long %>
+<% end %>

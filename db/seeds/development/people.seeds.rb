@@ -1,44 +1,54 @@
 Person.create!(
-  name: "Johanna",
+  name: "Johanna Torbörnsson",
   gender: :female,
   age: 27,
   email: "johanna@example.com",
   status: :established,
+  country: :se,
+  interest_list: "Fotografering, Programmering, Ost",
   engaged: false
 )
 
 Person.create!(
-  name: "Jens",
+  name: "Jens Ljungblad",
   gender: :male,
   age: 29,
   email: "jens@example.com",
   status: :newcomer,
+  country: :af,
+  interest_list: "Programmering, Rocket League",
   engaged: true
 )
 
 Person.create!(
-  name: "Fanny",
+  name: "Fanny Lindh",
   gender: :female,
   age: 29,
   email: "fanny@example.com",
   status: :established,
+  country: :se,
+  interest_list: "Låtsasvärldar, Cyklar",
   engaged: true
 )
 
 Person.create!(
-  name: "Bruno",
+  name: "Bruno Söderström",
   gender: :male,
   age: 29,
   email: "bruno@example.com",
   status: :newcomer,
+  country: :af,
+  interest_list: "Låtsasvärldar, Opera, Poesi",
   engaged: true
 )
 
 Person.create!(
-  name: "Julia",
+  name: "Julia Ramstedt",
   gender: :female,
   age: 29,
   email: "julia@example.com",
   status: :established,
+  country: :se,
+  interest_list: "Programmering, Hinderbanor, Djävulspinnar",
   engaged: false
 )

@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.2.5"
   s.add_dependency "godmin", "~> 1.2.0"
+  s.add_dependency "godmin-tags", "~> 1.0.1"
 end

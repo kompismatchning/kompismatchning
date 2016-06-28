@@ -3,7 +3,7 @@ module Admin
     include Godmin::Resources::ResourceService
 
     attrs_for_index :established, :newcomer, :created_at_as_date, :concluded_at_as_date
-    attrs_for_show :established, :newcomer, :created_at_as_date, :concluded_at_as_date
+    attrs_for_show :established, :newcomer, :created_at_as_date, :concluded_at_as_date, :comment
 
     scope :active
     scope :inactive

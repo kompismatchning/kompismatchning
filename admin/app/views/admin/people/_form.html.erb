@@ -1,0 +1,13 @@
+<%= form_for @resource do |f| %>
+  <%= f.text_field :name %>
+  <%= f.email_field :email %>
+  <%= f.text_field :phone_number %>
+  <%= f.number_field :age %>
+  <%= f.select :gender, Person.gender_for_selection, {}, data: { behavior: "select-box" } %>
+  <%= f.select :status, Person.status_for_selection, {}, data: { behavior: "select-box" } %>
+  <%= f.select :country, Person.country_for_selection, { include_blank: true }, data: { behavior: "select-box" } %>
+  <%= f.tags_field :interest_list, data: { collection: Interest.all.pluck(:name) } %>
+  <%= f.check_box :engaged %>
+  <%= f.text_area :comment %>
+  <%= f.submit %>
+<% end %>
