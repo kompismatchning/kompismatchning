@@ -40,3 +40,4 @@ sv:
         established_id: Etablerad
         created_at_as_date: Skapad
         concluded_at_as_date: Slutdatum
+        concluded_at: Slutdatum
