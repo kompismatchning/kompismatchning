@@ -1,17 +1,18 @@
 source "https://rubygems.org"
+ruby "2.2.3"
 
 gem "admin", path: "admin"
-gem "coffee-rails", "~> 4.1.0"
+gem "coffee-rails", "~> 4.2.1"
 gem "countries", "~> 1.2.5"
 gem "fix-db-schema-conflicts", "~> 1.2.2"
-gem "jbuilder", "~> 2.0"
 gem "jquery-rails", "~> 4.1.1"
 gem "pg", "~> 0.18.4"
-gem "rails", "4.2.6"
-gem "sass-rails", "~> 5.0"
+gem "puma", "~> 3.0"
+gem "rails", "5.0.0"
+gem "sass-rails", "~> 5.0.5"
 gem "seedbank", "~> 0.3.0"
-gem "semantic-ui-sass", "~> 2.1.8.0"
-gem "turbolinks", "~> 2.5.3"
+gem "semantic-ui-sass", "~> 2.1.8"
+gem "turbolinks", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
 
 group :test do
@@ -27,5 +28,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "listen", "~> 3.0.5"
   gem "spring", "~> 1.7.1"
+  gem "spring-watcher-listen", "~> 2.0.0"
 end
