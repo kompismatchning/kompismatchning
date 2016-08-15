@@ -33,6 +33,3 @@ group :development do
   gem "spring", "~> 1.7.1"
   gem "spring-watcher-listen", "~> 2.0.0"
 end
-
-gem "sinatra", github: "sinatra/sinatra"
-gem "rack-protection", github: "sinatra/rack-protection"
