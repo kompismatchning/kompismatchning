@@ -12,6 +12,7 @@ gem "rails", "5.0.0"
 gem "sass-rails", "~> 5.0.5"
 gem "seedbank", "~> 0.3.0"
 gem "semantic-ui-sass", "~> 2.1.8"
+gem "sidekiq", "~> 4.1.2"
 gem "turbolinks", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
 
