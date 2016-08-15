@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -27,10 +26,9 @@ ActiveRecord::Schema.define(version: 20160615181216) do
     t.integer "interest_id"
     t.integer "person_id"
     t.datetime "updated_at", null: false
+    t.index ["interest_id"], name: "index_interest_taggings_on_interest_id", using: :btree
+    t.index ["person_id"], name: "index_interest_taggings_on_person_id", using: :btree
   end
-
-  add_index "interest_taggings", ["interest_id"], name: "index_interest_taggings_on_interest_id", using: :btree
-  add_index "interest_taggings", ["person_id"], name: "index_interest_taggings_on_person_id", using: :btree
 
   create_table "interests", force: :cascade do |t|
     t.datetime "created_at", null: false
