@@ -3,10 +3,6 @@ class MatchMailerPreview < ActionMailer::Preview
     MatchMailer.follow_up_mail(match)
   end
 
-  def final_follow_up_mail
-    MatchMailer.final_follow_up_mail(match)
-  end
-
   private
 
   def match

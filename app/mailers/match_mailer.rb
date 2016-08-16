@@ -5,9 +5,4 @@ class MatchMailer < ActionMailer::Base
     @match = match
     mail(to: [match.newcomer.email, match.established.email], subject: "Uppföljning")
   end
-
-  def final_follow_up_mail(match)
-    @match = match
-    mail(to: [match.newcomer.email, match.established.email], subject: "Uppföljning")
-  end
 end
