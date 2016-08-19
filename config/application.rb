@@ -13,12 +13,17 @@ module Blending
     # -- all .rb files in that directory are automatically loaded.
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :sv
 
     # Be sure to have the adapter's gem in your Gemfile
     # and follow the adapter's specific installation
     # and deployment instructions.
     config.active_job.queue_adapter = :sidekiq
+
+    # The time after which to send a follow up email to match participants.
+    config.follow_up_matches_after = 1.month
+
+    # The time after which to automatically conclude matches.
+    config.conclude_matches_after = 6.months
   end
 end

@@ -25,7 +25,7 @@ module Admin
     end
 
     def create_resource(resource)
-      resource.concluded_at = 6.months.from_now
+      resource.concluded_at = Rails.configuration.conclude_matches_after.from_now
       resource.save!
     end
   end
