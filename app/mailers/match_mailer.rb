@@ -1,5 +1,5 @@
 class MatchMailer < ActionMailer::Base
-  default from: "test@example.com"
+  default from: "duo.stockholm@manniskohjalp.se"
 
   def follow_up_mail(match)
     @match = match
