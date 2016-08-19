@@ -6,8 +6,8 @@ class Match < ActiveRecord::Base
   validates :established, presence: true
   validates :concluded_at, presence: true
 
-  validate :newcomer_and_established_are_different
-  validate :newcomer_and_established_are_unmatched
+  validate :newcomer_and_established_are_different, on: :create
+  validate :newcomer_and_established_are_unmatched, on: :create
 
   def matched_with(person)
     newcomer == person ? established : newcomer
