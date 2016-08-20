@@ -17,7 +17,8 @@ module Admin
         :country,
         :interest_list,
         :engaged,
-        :comment
+        :comment,
+        :contact_preference
       )
     end
 
