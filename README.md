@@ -58,7 +58,23 @@ $ heroku run rails db:migrate
 
 ### Configure Scheduler
 
+Heroku Scheduler needs to be configured to run some tasks at regular intervals. Open the dashboard:
+
+```sh
+$ heroku addons:open scheduler
+```
+
+Configure the scheduler to run `rails matches:follow_up_mails` daily at the time you want match participants to receive their follow up mails.
+
 ### Configure SendGrid
+
+In order to send mails from the system, a mail service such as SendGrid is needed. If you wish to use a different service, install the appropriate addon and reconfigure the mail settings in `config/production.rb`.
+
+If using SendGrid, please note that you might need to change and confirm your e-mail address through their dashboard. Open it using:
+
+```sh
+$ heroku addons:open sendgrid
+```
 
 ## Configure the application
 
