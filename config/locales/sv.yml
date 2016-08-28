@@ -40,10 +40,9 @@ sv:
           newcomer: Nyanländ
       match:
         comment: Kommentar
-        newcomer: Nyanländ
-        newcomer_id: Nyanländ
-        established: Etablerad
-        established_id: Etablerad
-        created_at_as_date: Skapad
-        concluded_at_as_date: Slutdatum
         concluded_at: Slutdatum
+        created_at: Startdatum
+        established_id: Etablerad
+        established: Etablerad
+        newcomer_id: Nyanländ
+        newcomer: Nyanländ
