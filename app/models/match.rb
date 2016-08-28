@@ -24,14 +24,6 @@ class Match < ActiveRecord::Base
     update(concluded_at: Time.zone.now)
   end
 
-  def created_at_as_date
-    created_at.to_date
-  end
-
-  def concluded_at_as_date
-    concluded_at.to_date
-  end
-
   def to_s
     "#{newcomer.name} + #{established.name}"
   end

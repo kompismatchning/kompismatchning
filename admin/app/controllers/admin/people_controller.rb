@@ -8,16 +8,18 @@ module Admin
 
     def resource_params
       params.require(:person).permit(
-        :name,
-        :email,
-        :phone_number,
         :age,
-        :gender,
-        :status,
+        :comment,
+        :contact_preference,
         :country,
-        :interest_list,
+        :email,
         :engaged,
-        :comment
+        :gender,
+        :interest_list,
+        :name,
+        :phone_number,
+        :profession_list,
+        :status
       )
     end
 

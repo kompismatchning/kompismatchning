@@ -17,6 +17,10 @@ sv:
       person:
         age: Ålder
         comment: Kommentar
+        contact_preference: Kontaktas helst via
+        contact_preferences:
+          email: E-post
+          phone: Telefon
         country: Land
         email: E-post
         engaged: Engagerad
@@ -29,15 +33,16 @@ sv:
         matched_with: Matchad med
         name: Namn
         phone_number: Telefonnummer
+        profession_list: Yrken
+        status: Deltagare
         statuses:
           established: Etablerad
           newcomer: Nyanländ
       match:
         comment: Kommentar
-        newcomer: Nyanländ
-        newcomer_id: Nyanländ
-        established: Etablerad
-        established_id: Etablerad
-        created_at_as_date: Skapad
-        concluded_at_as_date: Slutdatum
         concluded_at: Slutdatum
+        created_at: Startdatum
+        established_id: Etablerad
+        established: Etablerad
+        newcomer_id: Nyanländ
+        newcomer: Nyanländ
