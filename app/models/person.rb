@@ -36,7 +36,7 @@ class Person < ActiveRecord::Base
   end
 
   def current_match
-    Match.where("newcomer_id = ? OR established_id = ?", id, id).last
+    Match.active.where("newcomer_id = ? OR established_id = ?", id, id).last
   end
 
   def currently_matched_with
