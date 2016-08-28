@@ -33,6 +33,8 @@ sv:
         matched_with: Matchad med
         name: Namn
         phone_number: Telefonnummer
+        profession_list: Yrken
+        status: Deltagare
         statuses:
           established: Etablerad
           newcomer: Nyanländ

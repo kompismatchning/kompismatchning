@@ -3,7 +3,7 @@ module Admin
     include Godmin::Resources::ResourceService
 
     attrs_for_index :name, :gender, :age, :email, :status, :country, :matched_with
-    attrs_for_show :name, :gender, :age, :email, :phone_number, :status, :country, :matched_with, :interest_list, :comment, :contact_preference
+    attrs_for_show :name, :gender, :age, :email, :phone_number, :status, :country, :matched_with, :profession_list, :interest_list, :comment, :contact_preference
 
     scope :interested
     scope :engaged
