@@ -10,6 +10,7 @@ module Admin
       params.require(:person).permit(
         :age,
         :comment,
+        :contact_preference,
         :country,
         :email,
         :engaged,

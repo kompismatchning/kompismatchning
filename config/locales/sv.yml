@@ -17,6 +17,10 @@ sv:
       person:
         age: Ålder
         comment: Kommentar
+        contact_preference: Kontaktas helst via
+        contact_preferences:
+          email: E-post
+          phone: Telefon
         country: Land
         email: E-post
         engaged: Engagerad
