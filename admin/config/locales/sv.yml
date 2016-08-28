@@ -18,5 +18,5 @@ sv:
         labels:
           name: Namn
           gender: Kön
-          status: Status
+          status: Deltagare
           country: Land
