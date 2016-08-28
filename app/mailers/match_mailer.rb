@@ -3,6 +3,6 @@ class MatchMailer < ActionMailer::Base
 
   def follow_up_mail(match)
     @match = match
-    mail(to: [match.newcomer.email, match.established.email], subject: "Uppföljning")
+    mail(to: [match.newcomer.email, match.established.email], subject: "Duo Stockholm – 1 månad")
   end
 end
