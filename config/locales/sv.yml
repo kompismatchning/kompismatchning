@@ -30,6 +30,7 @@ sv:
         name: Namn
         phone_number: Telefonnummer
         profession_list: Yrken
+        status: Deltagare
         statuses:
           established: Etablerad
           newcomer: Nyanländ
