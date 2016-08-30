@@ -8,24 +8,13 @@ Blending is built with Ruby on Rails and requires a server running Ruby and an S
 
 ## Running the application locally
 
-First, make sure you have Ruby, Bundler and Postgres installed. Next, clone the project and install its dependencies:
+First, make sure you have Ruby, Bundler and Postgres installed. Next, clone the project and run the setup script:
 
 ```sh
-$ bundle install
+$ bin/setup
 ```
 
-Create the database and run pending migrations:
-
-```sh
-$ rails db:create
-$ rails db:migrate
-```
-
-Finally, to start the application:
-
-```sh
-$ rails server
-```
+This will create the database and start the application.
 
 Navigate to http://localhost:3000
 
