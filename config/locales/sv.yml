@@ -41,8 +41,8 @@ sv:
       match:
         comment: Kommentar
         concluded_at: Slutdatum
-        created_at: Startdatum
         established_id: Etablerad
         established: Etablerad
         newcomer_id: Nyanländ
         newcomer: Nyanländ
+        started_at: Startdatum

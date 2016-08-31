@@ -7,6 +7,7 @@ sv:
     match:
       scopes:
         labels:
+          pending: Erbjudna
           active: Aktiva
           inactive: Avslutade
     person:
