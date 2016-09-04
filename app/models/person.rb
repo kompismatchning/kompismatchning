@@ -12,6 +12,13 @@ class Person < ActiveRecord::Base
 
   scope :interested, -> { where(engaged: false) }
   scope :engaged, -> { where(engaged: true) }
+  scope :matched, lambda {
+    joins("INNER JOIN matches ON matches.newcomer_id = people.id
+                              OR matches.established_id = people.id")
+  }
+  scope :pending, -> { matched.where(matches: { id: Match.pending }) }
+  scope :active, -> { matched.where(matches: { id: Match.active }) }
+  scope :inactive, -> { matched.where(matches: { id: Match.inactive }) }
 
   def self.contact_preference_for_selection
     contact_preferences.keys.map do |contact_preference|

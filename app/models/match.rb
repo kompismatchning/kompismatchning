@@ -13,21 +13,24 @@ class Match < ActiveRecord::Base
   end
 
   scope :pending, -> { where(started_at: nil) }
-  scope :active, -> { where.not(started_at: nil).where("concluded_at >= ?", Time.zone.now) }
-  scope :inactive, -> { where.not(started_at: nil).where("concluded_at < ?", Time.zone.now) }
+  scope :started, -> { where.not(started_at: nil) }
+  scope :active, -> { started.where("concluded_at >= ?", Time.zone.now) }
+  scope :inactive, -> { started.where("concluded_at < ?", Time.zone.now) }
 
   def pending?
     started_at.nil?
   end
 
+  def started?
+    !pending?
+  end
+
   def active?
-    return false if pending?
-    concluded_at >= Time.zone.now
+    started? && concluded_at >= Time.zone.now
   end
 
   def inactive?
-    return false if pending?
-    concluded_at < Time.zone.now
+    started? && concluded_at < Time.zone.now
   end
 
   def start
