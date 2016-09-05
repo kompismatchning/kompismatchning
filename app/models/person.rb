@@ -10,12 +10,20 @@ class Person < ActiveRecord::Base
   validates :age, numericality: { allow_blank: true, only_integer: true }
   validates :email, email: true
 
-  scope :interested, -> { where(engaged: false) }
-  scope :engaged, -> { where(engaged: true) }
-  scope :matched, lambda {
-    joins("INNER JOIN matches ON matches.newcomer_id = people.id
-                              OR matches.established_id = people.id")
+  scope :unmatched, lambda {
+    joins("LEFT JOIN matches
+           ON matches.newcomer_id = people.id
+           OR matches.established_id = people.id").where("matches.id IS NULL")
   }
+
+  scope :matched, lambda {
+    joins("INNER JOIN matches
+           ON matches.newcomer_id = people.id
+           OR matches.established_id = people.id")
+  }
+
+  scope :interested, -> { unmatched.where(engaged: false) }
+  scope :engaged, -> { unmatched.where(engaged: true) }
   scope :pending, -> { matched.where(matches: { id: Match.pending }) }
   scope :active, -> { matched.where(matches: { id: Match.active }) }
   scope :inactive, -> { matched.where(matches: { id: Match.inactive }) }
