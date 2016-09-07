@@ -23,7 +23,7 @@ sv:
           phone: Telefon
         country: Land
         email: E-post
-        engaged: Engagerad
+        engaged: Intervjuad
         gender: Kön
         genders:
           male: Man

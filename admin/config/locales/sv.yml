@@ -4,6 +4,7 @@ sv:
     actions:
       conclude: Avsluta
       conclude_confirm_message: Det här kommer sätta matchingens slutdatum till dagens datum. Vill du fortsätta?
+      engage: Intervjua
     match:
       scopes:
         labels:
@@ -13,7 +14,7 @@ sv:
       scopes:
         labels:
           interested: Intresserade
-          engaged: Engagerade
+          engaged: Intervjuade
       filters:
         labels:
           name: Namn

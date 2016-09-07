@@ -9,7 +9,7 @@
   <%= f.select :contact_preference, Person.contact_preference_for_selection, {}, data: { behavior: "select-box" } %>
   <%= f.tags_field :profession_list, data: { collection: Profession.all.pluck(:name) } %>
   <%= f.tags_field :interest_list, data: { collection: Interest.all.pluck(:name) } %>
-  <%= f.check_box :engaged %>
   <%= f.text_area :comment %>
+  <%= f.check_box :engaged %>
   <%= f.submit %>
 <% end %>
