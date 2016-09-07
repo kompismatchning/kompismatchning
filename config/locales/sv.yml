@@ -46,3 +46,6 @@ sv:
         established: Etablerad
         newcomer_id: Nyanländ
         newcomer: Nyanländ
+        statuses:
+          good: 😃
+          bad: 😢

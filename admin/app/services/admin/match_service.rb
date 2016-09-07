@@ -2,8 +2,8 @@ module Admin
   class MatchService
     include Godmin::Resources::ResourceService
 
-    attrs_for_index :established, :newcomer, :created_at, :concluded_at
-    attrs_for_show :established, :newcomer, :created_at, :concluded_at, :comment
+    attrs_for_index :established, :newcomer, :created_at, :concluded_at, :status
+    attrs_for_show :established, :newcomer, :created_at, :concluded_at, :status, :comment
 
     scope :active
     scope :inactive
