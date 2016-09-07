@@ -15,6 +15,9 @@ sv:
         labels:
           interested: Intresserade
           engaged: Engagerade
+          pending: Erbjudna
+          active: Aktiva
+          inactive: Avslutade
       filters:
         labels:
           name: Namn
