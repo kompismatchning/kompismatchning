@@ -26,7 +26,7 @@ class Person < ActiveRecord::Base
   scope :engaged, -> { unmatched.where(engaged: true) }
   scope :pending, -> { matched.where(matches: { id: Match.pending }) }
   scope :active, -> { matched.where(matches: { id: Match.active }) }
-  scope :inactive, -> { matched.where(matches: { id: Match.inactive }) }
+  scope :concluded, -> { matched.where(matches: { id: Match.concluded }) }
 
   def self.contact_preference_for_selection
     contact_preferences.keys.map do |contact_preference|

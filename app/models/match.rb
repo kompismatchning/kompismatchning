@@ -15,7 +15,7 @@ class Match < ActiveRecord::Base
   scope :pending, -> { where(started_at: nil) }
   scope :started, -> { where.not(started_at: nil) }
   scope :active, -> { started.where("concluded_at >= ?", Time.zone.now) }
-  scope :inactive, -> { started.where("concluded_at < ?", Time.zone.now) }
+  scope :concluded, -> { started.where("concluded_at < ?", Time.zone.now) }
 
   def pending?
     started_at.nil?
@@ -29,11 +29,11 @@ class Match < ActiveRecord::Base
     started? && concluded_at >= Time.zone.now
   end
 
-  def inactive?
+  def concluded?
     started? && concluded_at < Time.zone.now
   end
 
-  def start
+  def activate
     update(started_at: Time.zone.now, concluded_at: 6.months.from_now)
   end
 

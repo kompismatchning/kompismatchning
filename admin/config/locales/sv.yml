@@ -2,6 +2,7 @@ sv:
   godmin:
     title: Blending
     actions:
+      activate: Starta
       conclude: Avsluta
       conclude_confirm_message: Det här kommer sätta matchingens slutdatum till dagens datum. Vill du fortsätta?
     match:
@@ -9,7 +10,7 @@ sv:
         labels:
           pending: Erbjudna
           active: Aktiva
-          inactive: Avslutade
+          concluded: Avslutade
     person:
       scopes:
         labels:
@@ -17,7 +18,7 @@ sv:
           engaged: Engagerade
           pending: Erbjudna
           active: Aktiva
-          inactive: Avslutade
+          concluded: Avslutade
       filters:
         labels:
           name: Namn

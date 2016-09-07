@@ -7,7 +7,7 @@ module Admin
 
     scope :pending
     scope :active
-    scope :inactive
+    scope :concluded
 
     def scope_pending(matches)
       matches.pending
@@ -17,8 +17,8 @@ module Admin
       matches.active
     end
 
-    def scope_inactive(matches)
-      matches.inactive
+    def scope_concluded(matches)
+      matches.concluded
     end
   end
 end

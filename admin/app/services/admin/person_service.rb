@@ -9,7 +9,7 @@ module Admin
     scope :engaged
     scope :pending
     scope :active
-    scope :inactive
+    scope :concluded
 
     def scope_interested(people)
       people.interested
@@ -27,8 +27,8 @@ module Admin
       people.active
     end
 
-    def scope_inactive(people)
-      people.inactive
+    def scope_concluded(people)
+      people.concluded
     end
 
     filter :name
