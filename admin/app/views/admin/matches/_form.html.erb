@@ -1,10 +1,10 @@
 <%= form_for @resource do |f| %>
   <%= f.collection_select :newcomer_id, Person.engaged.newcomer, :id, :name, {}, data: { behavior: "select-box" }, disabled: @resource.persisted? %>
   <%= f.collection_select :established_id, Person.engaged.established, :id, :name, {}, data: { behavior: "select-box" }, disabled: @resource.persisted? %>
-  <%= f.text_area :comment %>
   <% if @resource.persisted? %>
     <%= f.date_field :concluded_at %>
     <%= f.select :status, Match.status_for_selection, {}, data: { behavior: "select-box" } %>
   <% end %>
+  <%= f.text_area :comment %>
   <%= f.submit %>
 <% end %>
