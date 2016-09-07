@@ -4,7 +4,7 @@
   <%= f.text_area :comment %>
   <% if @resource.persisted? %>
     <%= f.date_field :concluded_at %>
+    <%= f.select :status, Match.status_for_selection, {}, data: { behavior: "select-box" } %>
   <% end %>
-  <%= f.select :status, Match.status_for_selection, {}, data: { behavior: "select-box" } %>
   <%= f.submit %>
 <% end %>

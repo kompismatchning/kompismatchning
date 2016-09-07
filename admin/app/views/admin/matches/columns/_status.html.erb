@@ -1,7 +1,3 @@
-<big>
-  <% if resource.good? %>
-    😃
-  <% else %>
-    😢
-  <% end %>
-</big>
+<% if resource.status.present? %>
+  <big><%= t("activerecord.attributes.match.statuses.#{resource.status}") %></big>
+<% end %>
