@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <%= raw Rails.configuration.follow_up_mail_content.gsub(/{newcomer}/, @match.newcomer.name)
+                                                      .gsub(/{established}/, @match.established.name) %>
+  </body>
+</html>

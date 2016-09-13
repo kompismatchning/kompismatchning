@@ -41,7 +41,9 @@ ActiveRecord::Schema.define(version: 20160907201319) do
     t.datetime "concluded_at"
     t.datetime "created_at", null: false
     t.integer "established_id"
+    t.datetime "follow_up_mail_sent_at"
     t.integer "newcomer_id"
+    t.datetime "started_at"
     t.integer "status"
     t.datetime "updated_at", null: false
   end
