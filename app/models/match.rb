@@ -1,4 +1,6 @@
 class Match < ActiveRecord::Base
+  enum status: { good: 0, bad: 1 }
+
   belongs_to :newcomer, class_name: "Person"
   belongs_to :established, class_name: "Person"
 
@@ -8,6 +10,12 @@ class Match < ActiveRecord::Base
 
   validate :newcomer_and_established_are_different, on: :create
   validate :newcomer_and_established_are_unmatched, on: :create
+
+  def self.status_for_selection
+    statuses.keys.map do |status|
+      [I18n.t("activerecord.attributes.match.statuses.#{status}"), status]
+    end
+  end
 
   def matched_with(person)
     newcomer == person ? established : newcomer

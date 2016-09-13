@@ -46,3 +46,6 @@ sv:
         newcomer_id: Nyanländ
         newcomer: Nyanländ
         started_at: Startdatum
+        statuses:
+          good: 😃
+          bad: 😢
