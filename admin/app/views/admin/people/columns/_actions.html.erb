@@ -1,0 +1,12 @@
+<div class="btn-group btn-group-sm pull-right">
+  <% if policy(resource).show? %>
+    <%= link_to translate_scoped("actions.show"), resource, class: "btn btn-default" %>
+  <% end %>
+  <% if policy(resource).edit? %>
+    <%= link_to translate_scoped("actions.edit"), [:edit, resource], class: "btn btn-default"  %>
+  <% end %>
+  <% if resource.interested? %>
+    <%= link_to translate_scoped("actions.engage"), person_person_engagements_path(resource), method: :post,
+      class: "btn btn-primary" %>
+  <% end %>
+</div>
