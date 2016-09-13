@@ -13,11 +13,29 @@ class Match < ActiveRecord::Base
     newcomer == person ? established : newcomer
   end
 
-  scope :active, -> { where("concluded_at >= ?", Time.zone.now) }
-  scope :inactive, -> { where("concluded_at < ?", Time.zone.now) }
+  scope :pending, -> { where(started_at: nil) }
+  scope :started, -> { where.not(started_at: nil) }
+  scope :active, -> { started.where("concluded_at >= ?", Time.zone.now) }
+  scope :concluded, -> { started.where("concluded_at < ?", Time.zone.now) }
+
+  def pending?
+    started_at.nil?
+  end
+
+  def started?
+    !pending?
+  end
 
   def active?
-    concluded_at >= Time.zone.now
+    started? && concluded_at >= Time.zone.now
+  end
+
+  def concluded?
+    started? && concluded_at < Time.zone.now
+  end
+
+  def activate
+    update(started_at: Time.zone.now, concluded_at: 6.months.from_now)
   end
 
   def conclude

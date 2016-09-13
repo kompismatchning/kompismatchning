@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160820095906) do
+ActiveRecord::Schema.define(version: 20160831205033) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160820095906) do
     t.integer "established_id"
     t.datetime "follow_up_mail_sent_at"
     t.integer "newcomer_id"
+    t.datetime "started_at"
     t.datetime "updated_at", null: false
   end
 
