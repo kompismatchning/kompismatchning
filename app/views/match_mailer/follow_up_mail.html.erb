@@ -4,17 +4,7 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <p>Hej <%= @match.newcomer.name %> och <%= @match.established.name %>,</p>
-    <p>Hoppas ni mår bra. Jag och Zuraiya ville bara skriva och höra hur första månaden i Duo Stockholm har gått?</p>
-    <p>Har ni haft möjlighet att träffas?</p>
-    <p>Berätta gärna vad ni gjort. Har ni tagit något foto så skicka gärna. Det är kul att höra och se hur det går för er :)</p>
-    <p>
-      Ha en bra dag,<br>
-      Jonathan och Zuraiya
-    </p>
-    <p>
-      --<br>
-      Duo Stockholm
-    </p>
+    <%= raw Rails.configuration.follow_up_mail_content.gsub(/{newcomer}/, @match.newcomer.name)
+                                                      .gsub(/{established}/, @match.established.name) %>
   </body>
 </html>

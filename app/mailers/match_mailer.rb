@@ -1,8 +1,8 @@
-class MatchMailer < ActionMailer::Base
-  default from: "duo.stockholm@manniskohjalp.se"
-
+class MatchMailer < ApplicationMailer
   def follow_up_mail(match)
     @match = match
-    mail(to: [match.newcomer.email, match.established.email], subject: "Duo Stockholm – 1 månad")
+    mail(from: Rails.configuration.follow_up_mail_from,
+         subject: Rails.configuration.follow_up_mail_subject,
+         to: [match.newcomer.email, match.established.email])
   end
 end
