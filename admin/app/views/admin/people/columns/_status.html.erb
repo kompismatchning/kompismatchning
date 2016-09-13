@@ -1,1 +1,3 @@
-<%= t("activerecord.attributes.person.statuses.#{resource.status}") %>
+<% if resource.status.present? %>
+  <%= t("activerecord.attributes.person.statuses.#{resource.status}") %>
+<% end %>
