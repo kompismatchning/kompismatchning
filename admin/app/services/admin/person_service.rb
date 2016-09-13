@@ -51,11 +51,5 @@ module Admin
     def filter_country(people, value)
       people.where(country: value)
     end
-
-    batch_action :engage, only: [:interested]
-
-    def batch_action_engage(people)
-      people.update_all(engaged: true)
-    end
   end
 end

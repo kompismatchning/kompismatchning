@@ -50,6 +50,14 @@ class Person < ActiveRecord::Base
     ISO3166::Country.translations("sv").invert
   end
 
+  def interested?
+    !engaged?
+  end
+
+  def engage
+    update(engaged: true)
+  end
+
   def current_match
     Match.active.where("newcomer_id = ? OR established_id = ?", id, id).last
   end
