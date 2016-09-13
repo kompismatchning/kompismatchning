@@ -1,6 +1,6 @@
 # Blending
 
-Blending is a tool that helps organizations, cities and municipalities with pairing immigrants and refugees with people from the local community. It is currently being used by [IM](https://www.manniskohjalp.se) to run the Duo Stockholm program. It is free to use for anyone who wants to set up a similar program.
+Blending is a tool that helps organizations, cities and municipalities pairing immigrants and refugees with people from the local community. It is currently being used by [IM](https://www.manniskohjalp.se) to run the Duo Stockholm program. It is free to use for anyone who wants to set up a similar program.
 
 ## Requirements
 
