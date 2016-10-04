@@ -1,4 +1,4 @@
-class Interest < ActiveRecord::Base
+class Interest < ApplicationRecord
   has_many :interest_taggings, dependent: :destroy
   has_many :people, through: :interest_taggings
 end

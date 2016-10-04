@@ -1,20 +1,14 @@
-class Match < ActiveRecord::Base
-  enum status: { good: 0, bad: 1 }
-
+class Match < ApplicationRecord
   belongs_to :newcomer, class_name: "Person"
   belongs_to :established, class_name: "Person"
+
+  has_many :status_updates
 
   validates :newcomer, presence: true
   validates :established, presence: true
 
   validate :newcomer_and_established_are_different, on: :create
   validate :newcomer_and_established_are_unmatched, on: :create
-
-  def self.status_for_selection
-    statuses.keys.map do |status|
-      [I18n.t("activerecord.attributes.match.statuses.#{status}"), status]
-    end
-  end
 
   def matched_with(person)
     newcomer == person ? established : newcomer
@@ -47,6 +41,15 @@ class Match < ActiveRecord::Base
 
   def conclude
     update(concluded_at: Time.zone.now)
+  end
+
+  def status=(status)
+    status_updates.build(status: status)
+  end
+
+  def status
+    return unless status_updates.last
+    status_updates.last.status
   end
 
   def to_s

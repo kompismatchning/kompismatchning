@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907201319) do
+ActiveRecord::Schema.define(version: 20161004200536) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20160907201319) do
     t.datetime "follow_up_mail_sent_at"
     t.integer "newcomer_id"
     t.datetime "started_at"
-    t.integer "status"
     t.datetime "updated_at", null: false
   end
 
@@ -78,8 +77,17 @@ ActiveRecord::Schema.define(version: 20160907201319) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "status_updates", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "match_id"
+    t.integer "status"
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_status_updates_on_match_id", using: :btree
+  end
+
   add_foreign_key "interest_taggings", "interests"
   add_foreign_key "interest_taggings", "people"
   add_foreign_key "profession_taggings", "people"
   add_foreign_key "profession_taggings", "professions"
+  add_foreign_key "status_updates", "matches"
 end

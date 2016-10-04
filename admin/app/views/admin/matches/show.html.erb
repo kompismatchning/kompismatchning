@@ -1,0 +1,28 @@
+<%= render partial: "breadcrumb" %>
+
+<div class="row">
+  <div class="col-md-6">
+    <table class="table table-striped">
+      <% @resource_service.attrs_for_show.each do |attr| %>
+        <tr>
+          <th><%= @resource_class.human_attribute_name(attr) %></th>
+          <td><%= column_value(@resource, attr) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <table class="table table-striped">
+      <tr>
+        <th>Datum</th>
+        <th>Status</th>
+      </tr>
+      <% @resource.status_updates.each do |status_update| %>
+        <tr>
+          <td><%= status_update.created_at.to_date %></td>
+          <td><big><%= t("activerecord.attributes.status_update.statuses.#{status_update.status}") %></big></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

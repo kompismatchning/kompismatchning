@@ -1,4 +1,4 @@
-class Person < ActiveRecord::Base
+class Person < ApplicationRecord
   enum contact_preference: { email: 0, phone: 1 }
   enum gender: { male: 0, female: 1, other: 2 }
   enum status: { established: 0, newcomer: 1 }
