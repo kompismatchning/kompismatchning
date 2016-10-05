@@ -8,7 +8,7 @@
   <% end %>
   <% if @resource.persisted? %>
     <%= f.date_field :concluded_at %>
-    <%= f.select :status, StatusUpdate.status_for_selection, {}, data: { behavior: "select-box" } %>
+    <%= f.select :status, StatusUpdate.status_for_selection, { include_blank: true }, data: { behavior: "select-box" } %>
   <% end %>
   <%= f.text_area :comment %>
   <%= f.submit %>

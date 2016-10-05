@@ -2,7 +2,7 @@ class Match < ApplicationRecord
   belongs_to :newcomer, class_name: "Person"
   belongs_to :established, class_name: "Person"
 
-  has_many :status_updates
+  has_many :status_updates, dependent: :destroy
 
   validates :newcomer, presence: true
   validates :established, presence: true
@@ -44,6 +44,8 @@ class Match < ApplicationRecord
   end
 
   def status=(status)
+    return if status.blank?
+    return if status == self.status
     status_updates.build(status: status)
   end
 
