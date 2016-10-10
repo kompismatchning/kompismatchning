@@ -1,6 +1,11 @@
 sv:
   godmin:
     title: Blending
+    filters:
+      select:
+        placeholder:
+          one: Välj
+          many: Välj
     actions:
       activate: Starta
       conclude: Avsluta
