@@ -37,7 +37,7 @@ module Admin
     filter :country, as: :select, collection: -> { Person.country_for_selection }
 
     def filter_name(people, value)
-      people.where("name LIKE ?", "%#{value}%")
+      people.where("LOWER(name) LIKE LOWER(?)", "%#{value}%")
     end
 
     def filter_gender(people, value)
