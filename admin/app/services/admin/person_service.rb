@@ -6,7 +6,7 @@ module Admin
     attrs_for_show :name, :gender, :age, :email, :phone_number, :status, :country, :matched_with, :profession_list, :interest_list, :comment, :contact_preference
 
     scope :interested
-    scope :engaged
+    scope :engaged, default: true
     scope :pending
     scope :active
     scope :concluded
