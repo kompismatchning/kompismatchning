@@ -15,6 +15,7 @@ module Admin
         :email,
         :engaged,
         :gender,
+        :id_number,
         :interest_list,
         :name,
         :phone_number,

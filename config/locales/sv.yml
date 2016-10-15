@@ -29,6 +29,7 @@ sv:
           male: Man
           female: Kvinna
           other: Annat
+        id_number: Personnummer
         interest_list: Intressen
         matched_with: Matchad med
         name: Namn
