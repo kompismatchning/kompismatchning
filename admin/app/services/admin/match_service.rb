@@ -21,7 +21,14 @@ module Admin
       matches.concluded
     end
 
+    filter :name
     filter :status, as: :select, collection: -> { StatusUpdate.status_for_selection }
+
+    def filter_name(matches, value)
+      matches.joins("INNER JOIN people
+                     ON matches.newcomer_id = people.id
+                     OR matches.established_id = people.id").where("LOWER(people.name) LIKE LOWER(?)", "%#{value}%")
+    end
 
     def filter_status(matches, value)
       matches.includes(:status_updates).where(status_updates: { status: value })
