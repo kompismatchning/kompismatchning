@@ -54,6 +54,16 @@ class Match < ApplicationRecord
     status_updates.last.status
   end
 
+  def status_class
+    return "" unless status_updates.last
+    status_updates.last.good? ? "progress-bar-success" : "progress-bar-danger"
+  end
+
+  def progress
+    return 0 unless concluded_at.present? && started_at.present?
+    100 * ((Time.zone.now - started_at) / (concluded_at - started_at))
+  end
+
   def to_s
     "#{newcomer.name} + #{established.name}"
   end
