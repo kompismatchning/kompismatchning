@@ -7,7 +7,7 @@ Person.create!(
   country: "SE",
   profession_list: "Fotograf, Programmerare",
   interest_list: "Fotografering, Programmering, Ost",
-  engaged: false
+  engaged: true
 )
 
 Person.create!(
@@ -55,5 +55,29 @@ Person.create!(
   country: "SE",
   profession_list: "Programmerare",
   interest_list: "Programmering, Hinderbanor, Djävulspinnar",
-  engaged: false
+  engaged: true
+)
+
+Person.create!(
+  name: "Jonathan Österlund",
+  gender: :male,
+  age: 38,
+  email: "jonathan@example.com",
+  status: :established,
+  country: "SE",
+  profession_list: "Matchmakare",
+  interest_list: "",
+  engaged: true
+)
+
+Person.create!(
+  name: "Zuraiya Boularbah",
+  gender: :female,
+  age: 24,
+  email: "zuraiya@example.com",
+  status: :newcomer,
+  country: "AF",
+  profession_list: "Matchmakare",
+  interest_list: "",
+  engaged: true
 )
