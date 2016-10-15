@@ -6,7 +6,7 @@ module Admin
     attrs_for_show :established, :newcomer, :started_at, :concluded_at, :comment
 
     scope :pending
-    scope :active
+    scope :active, default: true
     scope :concluded
 
     def scope_pending(matches)
