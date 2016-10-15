@@ -17,6 +17,9 @@ sv:
           pending: Erbjudna
           active: Aktiva
           concluded: Avslutade
+      filters:
+        labels:
+          status: Status
     person:
       scopes:
         labels:

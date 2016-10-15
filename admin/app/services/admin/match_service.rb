@@ -20,5 +20,11 @@ module Admin
     def scope_concluded(matches)
       matches.concluded
     end
+
+    filter :status, as: :select, collection: -> { StatusUpdate.status_for_selection }
+
+    def filter_status(matches, value)
+      matches.includes(:status_updates).where(status_updates: { status: value })
+    end
   end
 end
