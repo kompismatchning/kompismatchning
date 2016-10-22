@@ -14,4 +14,12 @@
 //= require moment/sv
 //= require godmin
 //= require godmin-tags
+//= require clippy
 //= require_tree .
+
+$(function() {
+  clippy.load('Clippy', function(agent){
+    agent.show();
+    agent.speak('Why hello there! It looks like you are trying to match some folks. Would you like some assistance?');
+  });
+})
