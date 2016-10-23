@@ -18,8 +18,32 @@
 //= require_tree .
 
 $(function() {
-  clippy.load('Clippy', function(agent){
-    agent.show();
-    agent.speak('Why hello there! It looks like you are trying to match some folks. Would you like some assistance?');
+  clippy.load('Clippy', function(agent) {
+    if ($('#login').length > 0) {
+      var loginButton = $('input[type=submit]');
+      var loginButtonOffset = loginButton.offset();
+      agent.show();
+      agent.moveTo(loginButtonOffset.left - 0, loginButtonOffset.top - 30);
+      agent.speak('Howdy! It looks like you need to login. Please allow me to point at the button you need to click.');
+      agent.play('GestureLeft');
+
+      var adminUserEmail = $('#admin_user_email');
+      var adminUserEmailOffset = adminUserEmail.offset();
+      adminUserEmail.on('focus', function() {
+        console.log('focus email');
+        agent.stopCurrent();
+        agent.moveTo(adminUserEmailOffset.left + 40, adminUserEmailOffset.top - 30);
+        agent.speak('Please let me assist you. You need to enter your e-mail address right here!');
+        agent.play('GestureRight');
+      })
+    }
+
+    if ($('.breadcrumb li.active:contains("Personer")').length > 0) {
+    }
   });
 })
+
+
+// agent.play('GestureRight');
+// agent.play('Save');
+// agent.speak('Why hello there! It looks like you are trying to match some folks. Would you like some assistance?');
