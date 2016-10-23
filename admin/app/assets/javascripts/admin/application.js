@@ -35,15 +35,22 @@ $(function() {
         agent.moveTo(adminUserEmailOffset.left + 40, adminUserEmailOffset.top - 30);
         agent.speak('Please let me assist you. You need to enter your e-mail address right here!');
         agent.play('GestureRight');
-      })
+      });
+
+      var newAdminUserForm = $('#new_admin_user');
+      var newAdminUserFormSubmit = function(e) {
+        e.preventDefault();
+        agent.moveTo(loginButtonOffset.left - 0, loginButtonOffset.top - 30);
+        agent.speak('Wow! Good job!');
+        setTimeout(function() {
+          newAdminUserForm.off('submit', newAdminUserFormSubmit);
+          newAdminUserForm.submit();
+        }, 2000);
+      }
+      newAdminUserForm.on('submit', newAdminUserFormSubmit);
     }
 
     if ($('.breadcrumb li.active:contains("Personer")').length > 0) {
     }
   });
-})
-
-
-// agent.play('GestureRight');
-// agent.play('Save');
-// agent.speak('Why hello there! It looks like you are trying to match some folks. Would you like some assistance?');
+});
