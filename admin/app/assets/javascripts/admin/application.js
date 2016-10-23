@@ -30,7 +30,6 @@ $(function() {
       var adminUserEmail = $('#admin_user_email');
       var adminUserEmailOffset = adminUserEmail.offset();
       adminUserEmail.on('focus', function() {
-        console.log('focus email');
         agent.stopCurrent();
         agent.moveTo(adminUserEmailOffset.left + 40, adminUserEmailOffset.top - 30);
         agent.speak('Please let me assist you. You need to enter your e-mail address right here!');
@@ -40,8 +39,7 @@ $(function() {
       var newAdminUserForm = $('#new_admin_user');
       var newAdminUserFormSubmit = function(e) {
         e.preventDefault();
-        agent.moveTo(loginButtonOffset.left - 0, loginButtonOffset.top - 30);
-        agent.speak('Wow! Good job!');
+        agent.speak('Well done! Thank you for logging in.');
         setTimeout(function() {
           newAdminUserForm.off('submit', newAdminUserFormSubmit);
           newAdminUserForm.submit();
