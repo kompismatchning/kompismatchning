@@ -1,14 +1,21 @@
 <% unless resource.pending? %>
-  <div class="progress" style="margin-bottom: 5px; height: 10px">
-    <div class="<%= "progress-bar #{resource.status_class}" %>" role="progressbar" aria-valuenow=<%= resource.progress %> aria-valuemin="0" aria-valuemax="100" style="width: <%= resource.progress %>%;">
+  <div class="clearfix">
+    <div class="pull-left">
+      <%= resource.started_at.to_date %><br>
+      <small>för <%= time_ago_in_words resource.started_at %> sedan</small>
+    </div>
+    <div class="pull-right text-right">
+      <%= resource.concluded_at.to_date %><br>
+      <small>om <%= time_ago_in_words resource.concluded_at %></small>
     </div>
   </div>
-  <div class="pull-left">
-    <%= resource.started_at.to_date %><br>
-    <small>för <%= time_ago_in_words resource.started_at %> sedan</small>
-  </div>
-  <div class="pull-right text-right">
-    <%= resource.started_at.to_date %><br>
-    <small>för <%= time_ago_in_words resource.started_at %> sedan</small>
+  <div class="progress" style="height: 10px; margin: 5px 0 0;">
+    <div class="progress-bar <%= resource.status_class %>"
+         role="progressbar"
+         aria-valuenow="<%= resource.progress %>"
+         aria-valuemin="0"
+         aria-valuemax="100"
+         style="width: <%= resource.progress %>%;">
+    </div>
   </div>
 <% end %>
