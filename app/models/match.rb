@@ -50,13 +50,8 @@ class Match < ApplicationRecord
   end
 
   def status
-    return unless status_updates.last
-    status_updates.last.status
-  end
-
-  def status_class
-    return "" unless status_updates.last
-    status_updates.last.good? ? "progress-bar-success" : "progress-bar-danger"
+    return unless last_status_update
+    last_status_update.status
   end
 
   def progress
@@ -69,6 +64,10 @@ class Match < ApplicationRecord
   end
 
   private
+
+  def last_status_update
+    status_updates.last
+  end
 
   def newcomer_and_established_are_different
     return if newcomer_id != established_id

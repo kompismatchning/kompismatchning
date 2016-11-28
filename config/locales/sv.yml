@@ -49,5 +49,5 @@ sv:
         started_at: Startdatum
       status_update:
         statuses:
-          good: 😃
-          bad: 😢
+          good: Det går bra
+          bad: Det går dåligt

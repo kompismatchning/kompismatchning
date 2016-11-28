@@ -20,7 +20,9 @@
       <% @resource.status_updates.each do |status_update| %>
         <tr>
           <td><%= status_update.created_at.to_date %></td>
-          <td><big><%= t("activerecord.attributes.status_update.statuses.#{status_update.status}") %></big></td>
+          <td>
+            <%= t("activerecord.attributes.status_update.statuses.#{status_update.status}") %>
+          </td>
         </tr>
       <% end %>
     </table>
