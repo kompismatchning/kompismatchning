@@ -54,6 +54,12 @@ class Match < ApplicationRecord
     last_status_update.status
   end
 
+  def status_overdue?
+    return false if status
+    return false if started_at > Rails.configuration.follow_up_matches_after.ago
+    true
+  end
+
   def progress
     return 0 unless concluded_at.present? && started_at.present?
     100 * ((Time.zone.now - started_at) / (concluded_at - started_at))
