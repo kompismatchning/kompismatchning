@@ -10,9 +10,9 @@
       class: "btn btn-primary" %>
   <% elsif resource.active? %>
     <%= link_to translate_scoped("actions.conclude"), match_match_conclusions_path(resource), method: :post,
-      class: "btn btn-danger", data: { confirm: translate_scoped("actions.conclude_confirm_message") } %>
+      class: "btn btn-default", data: { confirm: translate_scoped("actions.conclude_confirm_message") } %>
   <% elsif policy(resource).destroy? %>
     <%= link_to translate_scoped("actions.destroy"), resource, method: :delete,
-      class: "btn btn-danger", data: { confirm: translate_scoped("actions.confirm_message") } %>
+      class: "btn btn-default", data: { confirm: translate_scoped("actions.confirm_message") } %>
   <% end %>
 </div>
