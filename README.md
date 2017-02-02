@@ -2,6 +2,8 @@
 
 Blending is a tool that helps organizations, cities and municipalities pairing immigrants and refugees with people from the local community. It is currently being used by [IM](https://www.manniskohjalp.se) to run the Duo Stockholm program. It is free to use for anyone who wants to set up a similar program.
 
+A demo is available at https://blending.herokuapp.com/admin. Login with admin@example.com/password.
+
 ## Requirements
 
 Blending is built with Ruby on Rails and requires a server running Ruby and an SQL database such as Postgres. An e-mail service such as [SendGrid](https://www.sendgrid.com) is required to send e-mails. We recommend installing and running the application on the [Heroku](https://www.heroku.com) platform.
