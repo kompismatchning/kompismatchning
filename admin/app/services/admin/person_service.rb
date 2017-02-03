@@ -6,11 +6,20 @@ module Admin
     attrs_for_show :name, :id_number, :gender, :age, :email, :phone_number, :status, :country, :matched_with, :profession_list, :interest_list, :comment, :contact_preference
     attrs_for_export :name, :id_number, :gender, :age, :email, :phone_number
 
+    def resources(params)
+      super(params).order(name: :asc)
+    end
+
+    scope :all
     scope :interested
     scope :engaged, default: true
     scope :pending
     scope :active
     scope :concluded
+
+    def scope_all(people)
+      people
+    end
 
     def scope_interested(people)
       people.interested

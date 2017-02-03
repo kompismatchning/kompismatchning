@@ -24,6 +24,7 @@ sv:
     person:
       scopes:
         labels:
+          all: Alla
           interested: Intresserade
           engaged: Intervjuade
           pending: Erbjudna
