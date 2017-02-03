@@ -1,5 +1,5 @@
 class StatusUpdate < ApplicationRecord
-  enum status: { good: 0, bad: 1 }
+  enum status: { good: 0, warning: 2, bad: 1 }
 
   belongs_to :match
 

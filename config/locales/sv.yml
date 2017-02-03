@@ -50,4 +50,5 @@ sv:
       status_update:
         statuses:
           good: Det går bra
+          warning: Det går okej
           bad: Det går dåligt
