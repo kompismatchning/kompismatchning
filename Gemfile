@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "2.2.3"
+ruby "2.3.3"
 
 gem "admin", path: "admin"
 gem "coffee-rails", "~> 4.2.1"
