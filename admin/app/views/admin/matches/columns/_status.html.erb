@@ -2,11 +2,11 @@
   <div class="clearfix">
     <div class="pull-left">
       <%= resource.started_at.to_date %><br>
-      <small>för <%= time_ago_in_words resource.started_at %> sedan</small>
+      <small><%= time_ago_in_words_with_preposition resource.started_at %></small>
     </div>
     <div class="pull-right text-right">
       <%= resource.concluded_at.to_date %><br>
-      <small>om <%= time_ago_in_words resource.concluded_at %></small>
+      <small><%= time_ago_in_words_with_preposition resource.concluded_at %></small>
     </div>
   </div>
   <div class="progress" style="height: 10px; margin: 5px 0 0;">

@@ -1,4 +1,4 @@
 <% unless resource.pending? %>
   <%= resource.started_at.to_date %><br>
-  <small>för <%= time_ago_in_words resource.started_at %> sedan</small>
+  <small><%= time_ago_in_words_with_preposition resource.started_at %></small>
 <% end %>

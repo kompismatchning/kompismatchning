@@ -1,0 +1,5 @@
+<% if @resource.follow_up_mail_sent_at %>
+  <%= "#{@resource.follow_up_mail_sent_at.to_date}" %>
+<% else %>
+  Inte skickat ännu
+<% end %>

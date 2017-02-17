@@ -12,5 +12,13 @@ module Admin
         "default"
       end
     end
+
+    def time_ago_in_words_with_preposition(date)
+      if date < Time.zone.now
+        "för #{time_ago_in_words(date)} sedan"
+      else
+        "om #{time_ago_in_words(date)}"
+      end
+    end
   end
 end
