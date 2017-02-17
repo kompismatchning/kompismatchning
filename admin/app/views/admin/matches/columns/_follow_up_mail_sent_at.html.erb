@@ -1,5 +1,9 @@
 <% if @resource.follow_up_mail_sent_at %>
-  <%= "#{@resource.follow_up_mail_sent_at.to_date}" %>
+  <%= "Skickades #{@resource.follow_up_mail_sent_at.to_date}" %>
 <% else %>
-  Inte skickat ännu
+  <% if @resource.send_follow_up_mail %>
+    Inte skickat ännu
+  <% else %>
+    Utskick är avstängt
+  <% end %>
 <% end %>

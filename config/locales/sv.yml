@@ -47,7 +47,8 @@ sv:
         newcomer_id: Nyanländ
         newcomer: Nyanländ
         started_at: Startdatum
-        follow_up_mail_sent_at: Uppföljningsmail skickat
+        follow_up_mail_sent_at: Uppföljningsmail
+        send_follow_up_mail: Skicka uppföljningsmail
       status_update:
         statuses:
           good: Det går bra

@@ -4,6 +4,7 @@ namespace :matches do
     matches_to_process = Match.active
                               .where("started_at < ?", Rails.configuration.follow_up_matches_after.ago)
                               .where(follow_up_mail_sent_at: nil)
+                              .where(send_follow_up_mail: true)
 
     puts "Sending follow up mails to #{matches_to_process.count} matches"
 
