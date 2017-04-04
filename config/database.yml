@@ -6,11 +6,7 @@ default: &default
 development:
   <<: *default
   database: blending_development
-  username: postgres
-  password:
 
 test:
   <<: *default
   database: blending_test
-  username: postgres
-  password:

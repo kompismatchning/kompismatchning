@@ -34,19 +34,13 @@ module Admin
                      OR matches.established_id = people.id").where("LOWER(people.name) LIKE LOWER(?)", "%#{value}%")
     end
 
-    # TODO: We need to do two queries here because apparently Godmin doesn't support
-    # grouped queries in filters or something. There is a PR open on Godmin so
-    # we can fix this once that has been merged.
     def filter_status(matches, value)
-      ids = matches.joins(:status_updates)
-                   .where("status_updates.created_at = (SELECT MAX(status_updates.created_at)
-                                                               FROM status_updates
-                                                               WHERE status_updates.match_id = matches.id)")
-                   .where(status_updates: { status: value })
-                   .group("matches.id")
-                   .pluck(:id)
-
-      matches.where(id: ids)
+      matches.joins(:status_updates)
+             .where("status_updates.created_at = (SELECT MAX(status_updates.created_at)
+                                                         FROM status_updates
+                                                         WHERE status_updates.match_id = matches.id)")
+             .where(status_updates: { status: value })
+             .group("matches.id")
     end
 
     def order_by_status(resources, direction)
