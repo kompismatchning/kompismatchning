@@ -49,6 +49,8 @@ sv:
         started_at: Startdatum
         follow_up_mail_sent_at: Uppföljningsmail
         send_follow_up_mail: Skicka uppföljningsmail
+        conclusion_mail_sent_at: Avslutningsmail
+        send_conclusion_mail: Skicka avslutningsmail
       status_update:
         statuses:
           good: Det går bra

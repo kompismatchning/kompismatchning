@@ -18,11 +18,18 @@
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-body">
-          <h4>Uppföljningsmail</h4>
+          <h5>Uppföljningsmail</h5>
           <% if @resource.follow_up_mail_sent_at %>
             Skickades <%= @resource.follow_up_mail_sent_at.to_date %>
           <% else %>
             <%= f.check_box :send_follow_up_mail %>
+          <% end %>
+
+          <h5>Avslutningsmail</h5>
+          <% if @resource.conclusion_mail_sent_at %>
+            Skickades <%= @resource.conclusion_mail_sent_at.to_date %>
+          <% else %>
+            <%= f.check_box :send_conclusion_mail %>
           <% end %>
         </div>
       </div>
