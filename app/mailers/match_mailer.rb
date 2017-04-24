@@ -5,4 +5,6 @@ class MatchMailer < ApplicationMailer
          subject: Rails.configuration.follow_up_mail_subject,
          to: [match.newcomer.email, match.established.email])
   end
+
+  def conclusion_mail(match); end
 end
