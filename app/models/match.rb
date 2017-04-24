@@ -40,7 +40,7 @@ class Match < ApplicationRecord
   end
 
   def conclude
-    update(concluded_at: Time.zone.now)
+    update(concluded_at: Time.zone.now, send_conclusion_mail: false)
   end
 
   def status=(status)
@@ -62,7 +62,7 @@ class Match < ApplicationRecord
 
   def progress
     return 100 if concluded?
-    
+
     return 0 unless concluded_at.present? && started_at.present?
     100 * ((Time.zone.now - started_at) / (concluded_at - started_at))
   end

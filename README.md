@@ -78,12 +78,18 @@ config.follow_up_matches_after = 1.month
 # The time after which to automatically conclude matches.
 config.conclude_matches_after = 6.months
 
-# The email from which to send follow up mails.
-config.follow_up_mail_from = "no-reply@example.com"
+# The email from which to send follow up and conclusion emails.
+config.mail_from = "no-reply@example.com"
 
 # The subject line of follow up mails.
 config.follow_up_mail_subject = "Follow up"
 
 # The content of follow up mails.
 config.follow_up_mail_content = "Hello {newcomer} and {established}..."
+
+# The subject line of conclusion mails.
+config.conclude_mail_subject = "Thank you for your participation"
+
+# The content of conclusion mails.
+config.conclude_mail_content = "Hello {newcomer} and {established}..."
 ```
