@@ -10,23 +10,23 @@ class Person < ApplicationRecord
   validates :age, numericality: { allow_blank: true, only_integer: true }
   validates :email, email: true
 
-  scope :unmatched, lambda {
+  scope :unmatched, (lambda {
     joins("LEFT JOIN matches
            ON matches.newcomer_id = people.id
            OR matches.established_id = people.id").where("matches.id IS NULL")
-  }
+  })
 
-  scope :matched, lambda {
+  scope :matched, (lambda {
     joins("INNER JOIN matches
            ON matches.newcomer_id = people.id
            OR matches.established_id = people.id")
-  }
+  })
 
-  scope :interested, -> { unmatched.where(engaged: false) }
-  scope :engaged, -> { unmatched.where(engaged: true) }
-  scope :pending, -> { matched.where(matches: { id: Match.pending }) }
-  scope :active, -> { matched.where(matches: { id: Match.active }) }
-  scope :concluded, -> { matched.where(matches: { id: Match.concluded }) }
+  scope :interested, (-> { unmatched.where(engaged: false) })
+  scope :engaged, (-> { unmatched.where(engaged: true) })
+  scope :pending, (-> { matched.where(matches: { id: Match.pending }) })
+  scope :active, (-> { matched.where(matches: { id: Match.active }) })
+  scope :concluded, (-> { matched.where(matches: { id: Match.concluded }) })
 
   def self.contact_preference_for_selection
     contact_preferences.keys.map do |contact_preference|
