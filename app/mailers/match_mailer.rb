@@ -6,10 +6,11 @@ class MatchMailer < ApplicationMailer
          to: [match.newcomer.email, match.established.email])
   end
 
-  def conclusion_mail(match)
-    @match = match
+  def conclusion_mail(person)
+    @person = person
+    @survey_link = @person.established? ? Rails.configuration.survey_link_for_established : Rails.configuration.survey_link_for_newcomer
     mail(from: Rails.configuration.mail_from,
          subject: Rails.configuration.conclusion_mail_subject,
-         to: [match.newcomer.email, match.established.email])
+         to: [person.email])
   end
 end

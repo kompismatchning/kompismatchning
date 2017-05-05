@@ -49,20 +49,35 @@ module Blending
     }
 
     # The subject line of follow up mails.
-    config.conclusion_mail_subject = "Duo Stockholm – 6 månader"
+    config.conclusion_mail_subject = "Tack från Duo Stockholm"
 
     # The content of follow up mails.
     config.conclusion_mail_content = %{
-      <p>Hej {newcomer} och {established},</p>
-      <p>Placeholder</p>
+      <p>Hej {name},</p>
       <p>
-        Ha en bra dag,<br>
-        Jonathan och Zuraiya
+        Tack för att du har varit med i Duo Stockholm i <strong>6 månader</strong>. Vi vill fira att du varit med i Duo Stockholm.
+        Och vi vill veta vad du tycker om Duo Stockholm!
       </p>
       <p>
-        --<br>
-        Duo Stockholm
+        <strong>Berätta vad du tycker:</strong><br/>
+        Klicka på länken och svara på några korta frågor: <a href="{survey_link}">{survey_link}</a><br/>
+        Det tar max två minuter. Tack!
+      </p>
+      <p>
+        <strong>Kom på fest:</strong><br/>
+        Fira att du varit med i Duo Stockholm i 6 månader.
+        Kom med din Duo-kompis på sommarfest den <strong>7 juni kl. 17.00-20.00</strong><br/>
+        Adress: IMs kontor (Västgötagränd 17).
+        Anmälan: <a href="mailto:duo.stockholm@manniskohjalp.se">duo.stockholm@manniskohjalp.se</a>
+      </p>
+      <p>
+        Hälsningar,<br/>
+        Zuraiya, Hanna och Jonathan
       </p>
     }
+
+    config.survey_link_for_established = "https://sv.surveymonkey.com/r/Duo_Stockholm_E"
+
+    config.survey_link_for_newcomer = "https://sv.surveymonkey.com/r/Duo_Stockholm_N"
   end
 end

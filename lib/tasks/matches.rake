@@ -15,18 +15,19 @@ namespace :matches do
     end
   end
 
-  desc "Send conclusion mails"
-  task conclusion_mails: :environment do
-    matches_to_process = Match.concluded
-                              .where(conclusion_mail_sent_at: nil)
-                              .where(send_conclusion_mail: true)
-
-    puts "Sending conclusion mails to #{matches_to_process.count} matches"
-
-    matches_to_process.each do |match|
-      MatchMailer.conclusion_mail(match).deliver_later
-      match.conclusion_mail_sent_at = Time.zone.now
-      match.save
-    end
-  end
+  # desc "Send conclusion mails"
+  # task conclusion_mails: :environment do
+  #   matches_to_process = Match.concluded
+  #                             .where(conclusion_mail_sent_at: nil)
+  #                             .where(send_conclusion_mail: true)
+  #
+  #   puts "Sending conclusion mails to #{matches_to_process.count} matches"
+  #
+  #   matches_to_process.each do |match|
+  #     MatchMailer.conclusion_mail(match.established).deliver_later
+  #     MatchMailer.conclusion_mail(match.newcomer).deliver_later
+  #     match.conclusion_mail_sent_at = Time.zone.now
+  #     match.save
+  #   end
+  # end
 end
