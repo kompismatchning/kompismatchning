@@ -3,7 +3,7 @@ module Admin
     include Godmin::Resources::ResourceService
 
     attrs_for_index :id, :established, :newcomer, :status
-    attrs_for_show :established, :newcomer, :started_at, :concluded_at, :follow_up_mail_sent_at, :comment
+    attrs_for_show :established, :newcomer, :started_at, :concluded_at, :follow_up_mail_sent_at, :conclusion_mail_sent_at, :comment
 
     def resources(params)
       super(params).order(started_at: :desc)

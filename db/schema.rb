@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015120632) do
+ActiveRecord::Schema.define(version: 20170424064018) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,10 +40,13 @@ ActiveRecord::Schema.define(version: 20161015120632) do
   create_table "matches", force: :cascade do |t|
     t.text "comment"
     t.datetime "concluded_at"
+    t.datetime "conclusion_mail_sent_at"
     t.datetime "created_at", null: false
     t.integer "established_id"
     t.datetime "follow_up_mail_sent_at"
     t.integer "newcomer_id"
+    t.boolean "send_conclusion_mail", default: true
+    t.boolean "send_follow_up_mail", default: true
     t.datetime "started_at"
     t.datetime "updated_at", null: false
   end
