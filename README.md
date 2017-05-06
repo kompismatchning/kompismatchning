@@ -88,8 +88,14 @@ config.follow_up_mail_subject = "Follow up"
 config.follow_up_mail_content = "Hello {newcomer} and {established}..."
 
 # The subject line of conclusion mails.
-config.conclude_mail_subject = "Thank you for your participation"
+config.conclusion_mail_subject = "Thank you for your participation"
 
 # The content of conclusion mails.
-config.conclude_mail_content = "Hello {newcomer} and {established}..."
+config.conclusion_mail_content = "Hello {name}... Provide feedback at {survey_link}..."
+
+# The survey link in conclusion mails for established
+config.survey_link_for_established = "https://www.example.com/survey/established"
+
+# The survey link in conclusion mails for newcomers
+config.survey_link_for_newcomer = "https://www.example.com/survey/newcomer"
 ```

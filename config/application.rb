@@ -48,10 +48,10 @@ module Blending
       </p>
     }
 
-    # The subject line of follow up mails.
+    # The subject line of conclusion mails.
     config.conclusion_mail_subject = "Tack från Duo Stockholm"
 
-    # The content of follow up mails.
+    # The content of conclusion mails.
     config.conclusion_mail_content = %{
       <p>Hej {name},</p>
       <p>
@@ -74,10 +74,16 @@ module Blending
         Hälsningar,<br/>
         Zuraiya, Hanna och Jonathan
       </p>
+      <p>
+        --<br>
+        Duo Stockholm
+      </p>
     }
 
+    # The survey link in conclusion mails for established
     config.survey_link_for_established = "https://sv.surveymonkey.com/r/Duo_Stockholm_E"
 
+    # The survey link in conclusion mails for newcomers
     config.survey_link_for_newcomer = "https://sv.surveymonkey.com/r/Duo_Stockholm_N"
   end
 end
