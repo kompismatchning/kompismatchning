@@ -25,8 +25,13 @@ module Admin
       matches.concluded
     end
 
+    filter :id
     filter :name
     filter :status, as: :select, collection: -> { StatusUpdate.status_for_selection }
+
+    def filter_id(people, value)
+      people.where(id: value)
+    end
 
     def filter_name(matches, value)
       matches.joins("INNER JOIN people
