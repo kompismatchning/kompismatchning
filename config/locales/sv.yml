@@ -19,8 +19,11 @@ sv:
         password: Lösenord
       config:
         mail_from: Mail skickas från
-        follow_up_mail_subject: Uppföljningsmail ämnesrad
-        follow_up_mail_content: Uppföljningsmail innehåll
+        follow_up_mail_subject: Uppföljningsmailets ämnesrad
+        follow_up_mail_content: Uppföljningsmailets innehåll
+        conclusion_mail_subject: Avslutningsmailets ämnesrad
+        conclusion_mail_content_for_established: Avslutningsmailets innehåll för etablerade
+        conclusion_mail_content_for_newcomer: Avslutningsmailets innehåll för nyanlända
       person:
         age: Ålder
         comment: Kommentar

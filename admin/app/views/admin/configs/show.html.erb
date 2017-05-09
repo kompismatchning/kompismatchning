@@ -24,4 +24,20 @@
       <%= raw markdown @config.follow_up_mail_content %>
     </td>
   </tr>
+  <tr>
+    <th><%= @config.class.human_attribute_name(:conclusion_mail_subject) %></th>
+    <td><%= @config.conclusion_mail_subject %></td>
+  </tr>
+  <tr>
+    <th><%= @config.class.human_attribute_name(:conclusion_mail_content_for_established) %></th>
+    <td>
+      <%= raw markdown @config.conclusion_mail_content_for_established %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= @config.class.human_attribute_name(:conclusion_mail_content_for_newcomer) %></th>
+    <td>
+      <%= raw markdown @config.conclusion_mail_content_for_newcomer %>
+    </td>
+  </tr>
 </table>

@@ -1,19 +1,10 @@
 Config.destroy_all
 
 Config.create!(
-  mail_from: "duo.stockholm@manniskohjalp.se",
-  follow_up_mail_subject: "Duo Stockholm – 1 månad",
-  follow_up_mail_content: %{Hej {newcomer} och {established},
-
-Hoppas ni mår bra. Vi ville bara skriva och höra hur första månaden i Duo Stockholm har gått?
-
-Har ni haft möjlighet att träffas?
-
-Berätta gärna vad ni gjort. Har ni tagit något foto så skicka gärna. Det är kul att höra och se hur det går för er :)
-
-Ha en bra dag,
-Jonathan och Zuraiya
-
---
-Duo Stockholm}
+  mail_from: "no-reply@example.com",
+  follow_up_mail_subject: "How are you doing?",
+  follow_up_mail_content: "Hello {newcomer} and {established}, it's been a month since...",
+  conclusion_mail_subject: "Thank you for participating",
+  conclusion_mail_content_for_newcomer: "Hello {name}, please tell us about your experience as a newcomer...",
+  conclusion_mail_content_for_established: "Hello {name}, please tell us about your experience as an established..."
 )

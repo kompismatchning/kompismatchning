@@ -256,7 +256,7 @@ DEPENDENCIES
   pry-rails (~> 0.3.4)
   puma (~> 3.0)
   rails (= 5.0.0)
-  redcarpet
+  redcarpet (~> 3.4.0)
   sass-rails (~> 5.0.5)
   seedbank (~> 0.3.0)
   semantic-ui-sass (~> 2.1.8)

@@ -13,5 +13,8 @@
   <%= f.text_field :mail_from %>
   <%= f.text_field :follow_up_mail_subject %>
   <%= f.text_area :follow_up_mail_content, rows: 10 %>
+  <%= f.text_field :conclusion_mail_subject %>
+  <%= f.text_area :conclusion_mail_content_for_established, rows: 10 %>
+  <%= f.text_area :conclusion_mail_content_for_newcomer, rows: 10 %>
   <%= f.submit %>
 <% end %>
