@@ -17,7 +17,7 @@ module Admin
     end
 
     def destroy?
-      false
+      true
     end
   end
 end
