@@ -14,10 +14,10 @@ class Match < ApplicationRecord
     newcomer == person ? established : newcomer
   end
 
-  scope :pending, -> { where(started_at: nil) }
-  scope :started, -> { where.not(started_at: nil) }
-  scope :active, -> { started.where("concluded_at >= ?", Time.zone.now) }
-  scope :concluded, -> { started.where("concluded_at < ?", Time.zone.now) }
+  scope :pending, (-> { where(started_at: nil) })
+  scope :started, (-> { where.not(started_at: nil) })
+  scope :active, (-> { started.where("concluded_at >= ?", Time.zone.now) })
+  scope :concluded, (-> { started.where("concluded_at < ?", Time.zone.now) })
 
   def pending?
     started_at.nil?
@@ -62,7 +62,6 @@ class Match < ApplicationRecord
 
   def progress
     return 100 if concluded?
-
     return 0 unless concluded_at.present? && started_at.present?
     100 * ((Time.zone.now - started_at) / (concluded_at - started_at))
   end
