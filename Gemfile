@@ -16,6 +16,7 @@ gem "semantic-ui-sass", "~> 2.1.8"
 gem "sidekiq", "~> 4.1.2"
 gem "turbolinks", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
+gem "redcarpet"
 
 group :test do
   gem "m", "~> 1.3.4"

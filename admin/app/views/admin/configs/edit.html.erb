@@ -1,0 +1,17 @@
+<div id="breadcrumb">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to @config.class.model_name.human, config_path %>
+    </li>
+    <li class="active">
+      Ändra
+    </li>
+  </ol>
+</div>
+
+<%= form_for @config, url: config_path do |f| %>
+  <%= f.text_field :mail_from %>
+  <%= f.text_field :follow_up_mail_subject %>
+  <%= f.text_area :follow_up_mail_content, rows: 10 %>
+  <%= f.submit %>
+<% end %>
