@@ -1,0 +1,9 @@
+<% if @resource.conclusion_mail_sent_at %>
+  <%= "Skickades #{@resource.conclusion_mail_sent_at.to_date}" %>
+<% else %>
+  <% if @resource.send_conclusion_mail %>
+    Inte skickat ännu
+  <% else %>
+    Utskick är avstängt
+  <% end %>
+<% end %>

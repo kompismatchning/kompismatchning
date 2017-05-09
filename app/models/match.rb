@@ -40,7 +40,7 @@ class Match < ApplicationRecord
   end
 
   def conclude
-    update(concluded_at: Time.zone.now)
+    update(concluded_at: Time.zone.now, send_conclusion_mail: false)
   end
 
   def status=(status)
