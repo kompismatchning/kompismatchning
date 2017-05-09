@@ -11,10 +11,44 @@
 
 <%= form_for @config, url: config_path do |f| %>
   <%= f.text_field :mail_from %>
-  <%= f.text_field :follow_up_mail_subject %>
-  <%= f.text_area :follow_up_mail_content, rows: 10 %>
-  <%= f.text_field :conclusion_mail_subject %>
-  <%= f.text_area :conclusion_mail_content_for_established, rows: 10 %>
-  <%= f.text_area :conclusion_mail_content_for_newcomer, rows: 10 %>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.text_field :follow_up_mail_subject %>
+      <%= f.text_area :follow_up_mail_content, rows: 10 %>
+    </div>
+    <div class="col-md-6">
+      <div class="well">
+        <p>
+          Uppföljningsmail skickas ut en månad efter att en matchning har startat.
+          Samma mail skickas till bägge deltagare.
+        </p>
+        <p>
+          Taggarna <code>{newcomer}</code> och <code>{established}</code>
+          byts ut mot den nyanlända och etablerades namn.
+        </p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.text_field :conclusion_mail_subject %>
+      <%= f.text_area :conclusion_mail_content_for_established, rows: 10 %>
+      <%= f.text_area :conclusion_mail_content_for_newcomer, rows: 10 %>
+    </div>
+    <div class="col-md-6">
+      <div class="well">
+        <p>
+          Avslutningsmail skickas ut efter att matchningen löpt ut, dvs efter sex månader.
+          Matchningens deltagare får var sitt mail.
+        </p>
+        <p>
+          Taggen <code>{name}</code> byts ut mot personens namn.
+        </p>
+      </div>
+    </div>
+  </div>
+
   <%= f.submit %>
 <% end %>
