@@ -28,7 +28,10 @@ module Admin
       params.require(:config).permit(
         :mail_from,
         :follow_up_mail_subject,
-        :follow_up_mail_content
+        :follow_up_mail_content,
+        :conclusion_mail_subject,
+        :conclusion_mail_content_for_established,
+        :conclusion_mail_content_for_newcomer
       )
     end
   end
