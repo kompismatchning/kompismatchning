@@ -2,7 +2,7 @@ module Admin
   class PersonService
     include Godmin::Resources::ResourceService
 
-    attrs_for_index :id, :name, :gender, :age, :email, :status, :country, :matched_with
+    attrs_for_index :name, :gender, :age, :email, :status, :country, :matched_with
     attrs_for_show :name, :id_number, :gender, :age, :email, :phone_number, :status, :country, :matched_with, :profession_list, :interest_list, :comment, :contact_preference
     attrs_for_export :name, :id_number, :gender, :age, :email, :phone_number
 
@@ -41,14 +41,9 @@ module Admin
       people.concluded
     end
 
-    filter :id
     filter :name
     filter :email
     filter :status, as: :select, collection: -> { Person.status_for_selection }
-
-    def filter_id(people, value)
-      people.where(id: value)
-    end
 
     def filter_name(people, value)
       people.where("LOWER(name) LIKE LOWER(?)", "%#{value}%")

@@ -2,8 +2,8 @@ module Admin
   class MatchService
     include Godmin::Resources::ResourceService
 
-    attrs_for_index :id, :established, :newcomer, :status
-    attrs_for_show :established, :newcomer, :started_at, :concluded_at, :follow_up_mail_sent_at, :conclusion_mail_sent_at, :comment
+    attrs_for_index :newcomer, :established, :status
+    attrs_for_show :newcomer, :established, :started_at, :concluded_at, :follow_up_mail_sent_at, :conclusion_mail_sent_at, :comment
 
     def resources(params)
       super(params).order(started_at: :desc)
@@ -25,13 +25,8 @@ module Admin
       matches.concluded
     end
 
-    filter :id
     filter :name
     filter :status, as: :select, collection: -> { StatusUpdate.status_for_selection }
-
-    def filter_id(people, value)
-      people.where(id: value)
-    end
 
     def filter_name(matches, value)
       matches.joins("INNER JOIN people
