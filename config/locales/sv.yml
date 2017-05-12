@@ -4,6 +4,9 @@ sv:
       admin/admin_user:
         one: Administratör
         other: Administratörer
+      config:
+        one: Inställningar
+        other: Inställningar
       person:
         one: Person
         other: Personer
@@ -14,6 +17,13 @@ sv:
       admin/admin_user:
         email: E-post
         password: Lösenord
+      config:
+        mail_from: Mail skickas från
+        follow_up_mail_subject: Uppföljningsmailets ämnesrad
+        follow_up_mail_content: Uppföljningsmailets innehåll
+        conclusion_mail_subject: Avslutningsmailets ämnesrad
+        conclusion_mail_content_for_established: Avslutningsmailets innehåll för etablerade
+        conclusion_mail_content_for_newcomer: Avslutningsmailets innehåll för nyanlända
       person:
         age: Ålder
         comment: Kommentar

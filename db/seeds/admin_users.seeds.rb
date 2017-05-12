@@ -1,4 +1,4 @@
-Admin::AdminUser.create(
+Admin::AdminUser.create!(
   email: "admin@example.com",
   password: "password"
 )

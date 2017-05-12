@@ -4,7 +4,6 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <%= raw Rails.configuration.conclusion_mail_content.gsub(/{name}/, @person.name)
-                                                       .gsub(/{survey_link}/, @survey_link) %>
+    <%= raw markdown @content.gsub(/{name}/, @person.name) %>
   </body>
 </html>
