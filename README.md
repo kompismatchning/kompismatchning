@@ -55,7 +55,7 @@ Heroku Scheduler needs to be configured to run some tasks at regular intervals. 
 $ heroku addons:open scheduler
 ```
 
-Configure the scheduler to run `rails matches:follow_up_mails` daily at the time you want match participants to receive their follow up mails.
+Configure the scheduler to run `rails matches:mails` daily at the time you want match participants to receive their follow up and conclusion mails.
 
 ### Configure SendGrid
 

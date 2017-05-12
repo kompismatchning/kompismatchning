@@ -19,6 +19,17 @@ class Match < ApplicationRecord
   scope :active, (-> { started.where("concluded_at >= ?", Time.zone.now) })
   scope :concluded, (-> { started.where("concluded_at < ?", Time.zone.now) })
 
+  scope :follow_up_mails, (lambda {
+    active.where("started_at < ?", Rails.configuration.follow_up_matches_after.ago)
+          .where(follow_up_mail_sent_at: nil)
+          .where(send_follow_up_mail: true)
+  })
+
+  scope :conclusion_mails, (lambda {
+    concluded.where(conclusion_mail_sent_at: nil)
+             .where(send_conclusion_mail: true)
+  })
+
   def pending?
     started_at.nil?
   end
