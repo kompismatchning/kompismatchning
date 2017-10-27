@@ -1,5 +1,5 @@
 {
-  "name": "blending",
+  "name": "kompismatchning",
   "scripts": {
     "postdeploy": "bin/setup"
   },
