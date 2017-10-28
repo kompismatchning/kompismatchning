@@ -5,8 +5,8 @@ default: &default
 
 development:
   <<: *default
-  database: blending_development
+  database: kompismatchning_development
 
 test:
   <<: *default
-  database: blending_test
+  database: kompismatchning_test

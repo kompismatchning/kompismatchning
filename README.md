@@ -1,12 +1,12 @@
-# Blending
+# Kompismatchning
 
-Blending is a tool that helps organizations, cities and municipalities pair immigrants and refugees with people from the local community. It is currently being used by [IM](https://www.manniskohjalp.se) to run the Duo Stockholm program. It is free to use for anyone who wants to set up a similar program.
+Kompismatchning is a tool that helps organizations, cities and municipalities pair immigrants and refugees with people from the local community. It is currently being used by [IM](https://www.manniskohjalp.se) to run the Duo Stockholm program. It is free to use for anyone who wants to set up a similar program.
 
-A demo is available at https://blending.herokuapp.com/admin. Login with `admin@example.com` and `password`.
+A demo is available at https://kompismatchning.herokuapp.com/admin. Login with `admin@example.com` and `password`.
 
 ## Requirements
 
-Blending is built with Ruby on Rails and requires a server running Ruby and an SQL database such as Postgres. An e-mail service such as [SendGrid](https://www.sendgrid.com) is required to send e-mails. We recommend installing and running the application on the [Heroku](https://www.heroku.com) platform.
+Kompismatchning is built with Ruby on Rails and requires a server running Ruby and an SQL database such as Postgres. An e-mail service such as [SendGrid](https://www.sendgrid.com) is required to send e-mails. We recommend installing and running the application on the [Heroku](https://www.heroku.com) platform.
 
 ## Running the application locally
 
