@@ -82,7 +82,7 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
-    fix-db-schema-conflicts (2.0.0)
+    fix-db-schema-conflicts (3.0.2)
       rubocop (>= 0.38.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -246,7 +246,7 @@ DEPENDENCIES
   admin!
   coffee-rails (~> 4.2.1)
   countries (~> 1.2.5)
-  fix-db-schema-conflicts (~> 2.0.0)
+  fix-db-schema-conflicts (~> 3.0.2)
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3.1)
   listen (~> 3.0.5)
