@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "2.3.3"
+ruby "2.3.5"
 
 gem "admin", path: "admin"
 gem "coffee-rails", "~> 4.2.1"
@@ -20,13 +20,13 @@ gem "uglifier", ">= 1.3.0"
 
 group :test do
   gem "m", "~> 1.3.4"
-  gem "minitest-reporters", "~> 1.0.17"
   gem "minitest", "~> 5.8.4"
+  gem "minitest-reporters", "~> 1.0.17"
 end
 
 group :development, :test do
   gem "pry-byebug", "~> 3.0.1"
-  gem "pry-doc", "~> 0.6.0"
+  gem "pry-doc", "~> 0.11.1"
   gem "pry-rails", "~> 0.3.4"
 end
 
