@@ -32,6 +32,7 @@ end
 
 group :development do
   gem "listen", "~> 3.0.5"
+  gem "rubocop", "~> 0.49"
   gem "spring", "~> 1.7.1"
   gem "spring-watcher-listen", "~> 2.0.0"
 end
