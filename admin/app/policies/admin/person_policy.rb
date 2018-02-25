@@ -17,7 +17,7 @@ module Admin
     end
 
     def destroy?
-      false
+      Person.unmatched.include? record
     end
   end
 end
