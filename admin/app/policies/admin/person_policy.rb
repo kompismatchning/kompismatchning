@@ -17,7 +17,11 @@ module Admin
     end
 
     def destroy?
-      Person.unmatched.include? record
+      if record.newcomer?
+        record.newcomer_matches.empty?
+      else
+        record.established_matches.empty?
+      end
     end
   end
 end
