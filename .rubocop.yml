@@ -1,3 +1,6 @@
+Rails:
+  Enabled: true
+
 Metrics/ClassLength:
   Max: 300
 
@@ -9,6 +12,11 @@ Metrics/MethodLength:
 
 Style/Documentation:
   Enabled: false
+
+Style/MixinUsage:
+  Exclude:
+    - "bin/setup"
+    - "bin/update"
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
