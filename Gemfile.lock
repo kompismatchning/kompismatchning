@@ -2,8 +2,6 @@ PATH
   remote: admin
   specs:
     admin (0.0.1)
-      godmin (~> 1.5.0)
-      godmin-tags (~> 1.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -259,6 +257,8 @@ DEPENDENCIES
   coffee-rails (~> 4.2.1)
   countries (~> 1.2.5)
   fix-db-schema-conflicts (~> 3.0.2)
+  godmin (~> 1.5.0)
+  godmin-tags (~> 1.0.1)
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3.1)
   listen (~> 3.0.5)
