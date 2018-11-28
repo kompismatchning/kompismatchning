@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Person.create!(
   name: "Johanna Torbörnsson",
   gender: :female,

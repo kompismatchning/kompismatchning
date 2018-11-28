@@ -1,9 +1,10 @@
-ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
-require 'rails/test_help'
+# frozen_string_literal: true
+
+ENV["RAILS_ENV"] ||= "test"
+require File.expand_path("../config/environment", __dir__)
+require "rails/test_help"
 
 class ActiveSupport::TestCase
-
   def create_established_person
     create_person(:established)
   end

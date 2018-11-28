@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Admin
   module MatchHelper
     def match_status_class(match)

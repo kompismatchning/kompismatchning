@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MarkdownHelper
   def markdown(content)
     Redcarpet::Markdown.new(

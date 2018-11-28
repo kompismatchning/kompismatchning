@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StatusUpdate < ApplicationRecord
   enum status: { good: 0, warning: 2, bad: 1 }
 

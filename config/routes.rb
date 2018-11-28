@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get "/foo", to: "welcome#foo"
   get "/bar", to: "welcome#bar"

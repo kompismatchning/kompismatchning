@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Config.destroy_all
 
 Config.create!(

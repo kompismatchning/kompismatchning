@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateProfessionTaggings < ActiveRecord::Migration[5.0]
   def change
     create_table :profession_taggings do |t|

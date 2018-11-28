@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Admin
   class AdminUser < ActiveRecord::Base
     include Godmin::Authentication::User

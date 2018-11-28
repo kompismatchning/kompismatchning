@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :matches do
   desc "Send mails"
   task mails: ["matches:follow_up_mails", "matches:conclusion_mails"]

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Person < ApplicationRecord
   enum contact_preference: { email: 0, phone: 1 }
   enum gender: { male: 0, female: 1, other: 2 }

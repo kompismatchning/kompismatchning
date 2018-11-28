@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MatchMailerPreview < ActionMailer::Preview
   def follow_up_mail
     MatchMailer.follow_up_mail(match)
