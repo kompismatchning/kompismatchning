@@ -1,5 +1,13 @@
+AllCops:
+  Exclude:
+    - "db/schema.rb"
+    - "db/migrate/*"
+
 Rails:
   Enabled: true
+
+Metrics/BlockLength:
+  Max: 30
 
 Metrics/ClassLength:
   Max: 300
