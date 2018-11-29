@@ -19,11 +19,7 @@ module Admin
     end
 
     def destroy?
-      if record.newcomer?
-        record.newcomer_matches.empty?
-      else
-        record.established_matches.empty?
-      end
+      true
     end
   end
 end

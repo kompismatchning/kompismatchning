@@ -12,10 +12,6 @@ class Match < ApplicationRecord
   validate :newcomer_and_established_are_different, on: :create
   validate :newcomer_and_established_are_unmatched, on: :create
 
-  def matched_with(person)
-    newcomer == person ? established : newcomer
-  end
-
   scope :pending, (-> { where(started_at: nil) })
   scope :started, (-> { where.not(started_at: nil) })
   scope :active, (-> { started.where("concluded_at >= ?", Time.zone.now) })
@@ -31,6 +27,10 @@ class Match < ApplicationRecord
     concluded.where(conclusion_mail_sent_at: nil)
              .where(send_conclusion_mail: true)
   })
+
+  def matched_with(person)
+    newcomer == person ? established : newcomer
+  end
 
   def pending?
     started_at.nil?

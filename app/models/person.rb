@@ -5,8 +5,10 @@ class Person < ApplicationRecord
   enum gender: { male: 0, female: 1, other: 2 }
   enum status: { established: 0, newcomer: 1 }
 
-  has_many :newcomer_matches, foreign_key: "newcomer_id", class_name: "Match", inverse_of: "newcomer"
-  has_many :established_matches, foreign_key: "established_id", class_name: "Match", inverse_of: "established"
+  has_many :newcomer_matches, foreign_key: "newcomer_id", class_name: "Match",
+                              inverse_of: "newcomer", dependent: :destroy
+  has_many :established_matches, foreign_key: "established_id", class_name: "Match",
+                                 inverse_of: "established", dependent: :destroy
 
   validates :name, presence: true
   validates :age, numericality: { allow_blank: true, only_integer: true }
