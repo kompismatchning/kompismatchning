@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MatchMailer < ApplicationMailer
   helper :markdown
 
@@ -27,6 +29,6 @@ class MatchMailer < ApplicationMailer
   private
 
   def config
-    @_config ||= Config.first
+    @config ||= Config.first
   end
 end

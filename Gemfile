@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 ruby "2.3.5"
 
@@ -37,7 +39,7 @@ end
 
 group :development do
   gem "listen", "~> 3.0.5"
-  gem "rubocop", "~> 0.49"
+  gem "rubocop", "~> 0.52"
   gem "spring", "~> 1.7.1"
   gem "spring-watcher-listen", "~> 2.0.0"
 end

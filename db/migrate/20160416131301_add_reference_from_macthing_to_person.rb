@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddReferenceFromMacthingToPerson < ActiveRecord::Migration
   def change
     add_column :matchings, :newcomer_id, :integer

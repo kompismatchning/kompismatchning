@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 module Admin
   class MatchService
     include Godmin::Resources::ResourceService
 
     attrs_for_index :id, :newcomer, :established, :status
-    attrs_for_show :id, :newcomer, :established, :started_at, :concluded_at, :follow_up_mail_sent_at, :conclusion_mail_sent_at, :comment
+    attrs_for_show :id, :newcomer, :established, :started_at, :concluded_at,
+                   :follow_up_mail_sent_at, :conclusion_mail_sent_at, :comment
 
     def resources(params)
       super(params).order(started_at: :desc)

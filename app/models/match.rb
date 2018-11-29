@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Match < ApplicationRecord
   belongs_to :newcomer, class_name: "Person"
   belongs_to :established, class_name: "Person"
@@ -57,23 +59,27 @@ class Match < ApplicationRecord
   def status=(status)
     return if status.blank?
     return if status == self.status
+
     status_updates.build(status: status)
   end
 
   def status
     return unless last_status_update
+
     last_status_update.status
   end
 
   def status_overdue?
     return false if status
     return false if started_at > Rails.configuration.follow_up_matches_after.ago
+
     true
   end
 
   def progress
     return 100 if concluded?
     return 0 unless concluded_at.present? && started_at.present?
+
     100 * ((Time.zone.now - started_at) / (concluded_at - started_at))
   end
 
@@ -89,6 +95,7 @@ class Match < ApplicationRecord
 
   def newcomer_and_established_are_different
     return if newcomer_id != established_id
+
     errors.add(:newcomer_id, "can't be same as established")
     errors.add(:established_id, "can't be same as newcomer")
   end

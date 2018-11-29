@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class Person < ApplicationRecord
   enum contact_preference: { email: 0, phone: 1 }
   enum gender: { male: 0, female: 1, other: 2 }
   enum status: { established: 0, newcomer: 1 }
 
-  has_many :newcomer_matches, foreign_key: "newcomer_id", class_name: "Match"
-  has_many :established_matches, foreign_key: "established_id", class_name: "Match"
+  has_many :newcomer_matches, foreign_key: "newcomer_id", class_name: "Match", inverse_of: "newcomer"
+  has_many :established_matches, foreign_key: "established_id", class_name: "Match", inverse_of: "established"
 
   validates :name, presence: true
   validates :age, numericality: { allow_blank: true, only_integer: true }

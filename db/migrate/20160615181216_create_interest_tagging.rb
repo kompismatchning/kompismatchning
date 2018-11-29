@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateInterestTagging < ActiveRecord::Migration
   def change
     create_table :interest_taggings do |t|
