@@ -2,65 +2,77 @@
 
 require "test_helper"
 
-class ActivityTest < ActiveSupport::TestCase
-  def test_unmatched_scope
-    person_1 = create_person
-    person_2 = create_person
-    person_3 = create_person(status: :newcomer)
-    person_4 = create_person(status: :established)
-    create_match(newcomer: person_3, established: person_4)
+class PersonTest < ActiveSupport::TestCase
+  def test_unmatched_scope_included
+    person = create_person(status: :newcomer)
 
-    assert_equal [
-      person_1.id,
-      person_2.id
-    ], Person.unmatched.pluck(:id)
+    assert Person.unmatched.include?(person)
   end
 
-  def test_matched_scope
-    create_person
-    create_person
+  def test_unmatched_scope_not_included
     person_1 = create_person(status: :newcomer)
     person_2 = create_person(status: :established)
     create_match(newcomer: person_1, established: person_2)
 
-    assert_equal [
-      person_1.id,
-      person_2.id
-    ], Person.matched.pluck(:id)
+    assert_not Person.unmatched.include?(person_1)
+    assert_not Person.unmatched.include?(person_2)
   end
 
-  def test_interested_scope
-    person_1 = create_person(engaged: false)
-
-    assert_equal [
-      person_1.id
-    ], Person.interested.pluck(:id)
-  end
-
-  def test_engaged_scope
-    person_1 = create_person(engaged: true)
-
-    assert_equal [
-      person_1.id
-    ], Person.engaged.pluck(:id)
-  end
-
-  def test_pending_scope
-    create_person
-    create_person
+  def test_matched_scope_included
     person_1 = create_person(status: :newcomer)
     person_2 = create_person(status: :established)
     create_match(newcomer: person_1, established: person_2)
 
-    assert_equal [
-      person_1.id,
-      person_2.id
-    ], Person.pending.pluck(:id)
+    assert Person.matched.include?(person_1)
+    assert Person.matched.include?(person_2)
   end
 
-  def test_active_scope
-    create_person
-    create_person
+  def test_matched_scope_not_included
+    person = create_person(status: :newcomer)
+
+    assert_not Person.matched.include?(person)
+  end
+
+  def test_interested_scope_included
+    person = create_person(engaged: false)
+
+    assert Person.interested.include?(person)
+  end
+
+  def test_interested_scope_not_included
+    person = create_person(engaged: true)
+
+    assert_not Person.interested.include?(person)
+  end
+
+  def test_engaged_scope_included
+    person = create_person(engaged: true)
+
+    assert Person.engaged.include?(person)
+  end
+
+  def test_engaged_scope_not_included
+    person = create_person(engaged: false)
+
+    assert_not Person.engaged.include?(person)
+  end
+
+  def test_pending_scope_included
+    person_1 = create_person(status: :newcomer)
+    person_2 = create_person(status: :established)
+    create_match(newcomer: person_1, established: person_2)
+
+    assert Person.pending.include?(person_1)
+    assert Person.pending.include?(person_2)
+  end
+
+  def test_pending_scope_not_included
+    person = create_person
+
+    assert_not Person.pending.include?(person)
+  end
+
+  def test_active_scope_included
     person_1 = create_person(status: :newcomer)
     person_2 = create_person(status: :established)
     create_match(
@@ -70,15 +82,20 @@ class ActivityTest < ActiveSupport::TestCase
       concluded_at: 1.day.from_now
     )
 
-    assert_equal [
-      person_1.id,
-      person_2.id
-    ], Person.active.pluck(:id)
+    assert Person.active.include?(person_1)
+    assert Person.active.include?(person_2)
   end
 
-  def test_concluded_scope
-    create_person
-    create_person
+  def test_active_scope_not_included
+    person_1 = create_person(status: :newcomer)
+    person_2 = create_person(status: :established)
+    create_match(newcomer: person_1, established: person_2)
+
+    assert_not Person.active.include?(person_1)
+    assert_not Person.active.include?(person_2)
+  end
+
+  def test_concluded_scope_included
     person_1 = create_person(status: :newcomer)
     person_2 = create_person(status: :established)
     create_match(
@@ -88,10 +105,17 @@ class ActivityTest < ActiveSupport::TestCase
       concluded_at: 1.day.ago
     )
 
-    assert_equal [
-      person_1.id,
-      person_2.id
-    ], Person.concluded.pluck(:id)
+    assert Person.concluded.include?(person_1)
+    assert Person.concluded.include?(person_2)
+  end
+
+  def test_concluded_scope_not_included
+    person_1 = create_person(status: :newcomer)
+    person_2 = create_person(status: :established)
+    create_match(newcomer: person_1, established: person_2)
+
+    assert_not Person.concluded.include?(person_1)
+    assert_not Person.concluded.include?(person_2)
   end
 
   def test_interested_when_not_engaged
