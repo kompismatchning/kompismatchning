@@ -78,4 +78,26 @@ class MatchTest < ActiveSupport::TestCase
 
     assert_not Match.concluded.include?(match)
   end
+
+  def test_follow_up_mails_scope_included
+    match = create_match(
+      newcomer: create_person(status: :newcomer),
+      established: create_person(status: :established),
+      started_at: 1.month.ago,
+      concluded_at: 1.day.from_now
+    )
+
+    assert Match.follow_up_mails.include?(match)
+  end
+
+  def test_follow_up_mails_scope_not_included
+    match = create_match(
+      newcomer: create_person(status: :newcomer),
+      established: create_person(status: :established),
+      started_at: 1.day.ago,
+      concluded_at: 1.day.from_now
+    )
+
+    assert_not Match.follow_up_mails.include?(match)
+  end
 end

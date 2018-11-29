@@ -20,7 +20,9 @@ module ActiveSupport
         newcomer: newcomer,
         established: established,
         started_at: started_at,
-        concluded_at: concluded_at
+        concluded_at: concluded_at,
+        send_follow_up_mail: true,
+        send_conclusion_mail: true
       )
     end
   end
