@@ -28,6 +28,10 @@ class Match < ApplicationRecord
              .where(send_conclusion_mail: true)
   })
 
+  scope :concluded_to_destroy, (lambda {
+    concluded.where("concluded_at < ?", Rails.configuration.destroy_matches_and_people_after.ago)
+  })
+
   def matched_with(person)
     newcomer == person ? established : newcomer
   end
@@ -81,6 +85,12 @@ class Match < ApplicationRecord
     return 0 unless concluded_at.present? && started_at.present?
 
     100 * ((Time.zone.now - started_at) / (concluded_at - started_at))
+  end
+
+  def destroy_with_people
+    newcomer.destroy
+    established.destroy
+    destroy
   end
 
   def to_s

@@ -55,7 +55,7 @@ Heroku Scheduler needs to be configured to run some tasks at regular intervals. 
 $ heroku addons:open scheduler
 ```
 
-Configure the scheduler to run `rails matches:mails` daily at the time you want match participants to receive their follow up and conclusion mails.
+Configure the scheduler to run `rails matches:mails` daily at the time you want match participants to receive their follow up and conclusion mails. Also configure it to run `rails matches:destroy_concluded` daily to destroy matches (and people) at a configurable time after conclusion.
 
 ### Configure SendGrid
 
@@ -77,4 +77,7 @@ config.follow_up_matches_after = 1.month
 
 # The time after which to automatically conclude matches.
 config.conclude_matches_after = 6.months
+
+# The time after which to automatically destroy concluded matches and people.
+config.destroy_matches_and_people_after = 2.months
 ```
