@@ -6,6 +6,10 @@ AllCops:
 Rails:
   Enabled: true
 
+Metrics/AbcSize:
+  Exclude:
+    - "test/**/*"
+
 Metrics/BlockLength:
   Max: 30
 
@@ -17,6 +21,9 @@ Metrics/LineLength:
 
 Metrics/MethodLength:
   Max: 25
+
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
 
 Style/Documentation:
   Enabled: false
