@@ -100,4 +100,36 @@ class MatchTest < ActiveSupport::TestCase
 
     assert_not Match.follow_up_mails.include?(match)
   end
+
+  def test_destroy_concluded_to_destroy_scope_included
+    match = create_match(
+      newcomer: create_person(status: :newcomer),
+      established: create_person(status: :established),
+      started_at: 2.months.ago,
+      concluded_at: 2.months.ago
+    )
+
+    assert Match.concluded_to_destroy.include?(match)
+  end
+
+  def test_destroy_concluded_to_destroy_scope_not_included
+    match = create_match(
+      newcomer: create_person(status: :newcomer),
+      established: create_person(status: :established),
+      started_at: 1.month.ago,
+      concluded_at: 1.week.ago
+    )
+
+    assert_not Match.concluded_to_destroy.include?(match)
+  end
+
+  def test_destroy_with_people
+    person_1 = create_person(status: :newcomer)
+    person_2 = create_person(status: :established)
+    match = create_match(newcomer: person_1, established: person_2)
+    match.destroy_with_people
+    assert person_1.destroyed?
+    assert person_2.destroyed?
+    assert match.destroyed?
+  end
 end

@@ -30,4 +30,13 @@ namespace :matches do
       match.save
     end
   end
+
+  desc "Destroy concluded matches and people"
+  task destroy_concluded: :environment do
+    matches_to_process = Match.concluded_to_destroy
+
+    puts "Destroying #{matches_to_process.count} matches and their people"
+
+    matches_to_process.each(&:destroy_with_people)
+  end
 end

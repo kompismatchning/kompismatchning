@@ -27,5 +27,8 @@ module Kompismatchning
 
     # The time after which to automatically conclude matches.
     config.conclude_matches_after = 6.months
+
+    # The time after which to automatically destroy concluded matches and people.
+    config.destroy_matches_and_people_after = 2.months
   end
 end
