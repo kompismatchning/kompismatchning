@@ -14,7 +14,7 @@ end
 
 chdir APP_ROOT do
   if ENV["RAILS_ENV"] == "production"
-    system! "bin/rails db:schema:load"
+    system! "bin/rails db:schema:load DISABLE_DATABASE_ENVIRONMENT_CHECK=1"
     system! "bin/rails db:seed"
   else
     system! "bundle install"
